@@ -1,6 +1,6 @@
 qodana:
    image:
-      name: jetbrains/qodana-<linter>
+      name: jetbrains/qodana-python
       entrypoint: [""]
    cache:
       - key: qodana-2024.1-$CI_DEFAULT_BRANCH-$CI_COMMIT_REF_SLUG
