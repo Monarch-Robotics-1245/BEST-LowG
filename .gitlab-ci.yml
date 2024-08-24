@@ -1,6 +1,6 @@
 qodana:
    image:
-      name: jetbrains/qodana-python
+      name: jetbrains/qodana-python-community
       entrypoint: [""]
    cache:
       - key: qodana-2024.1-$CI_DEFAULT_BRANCH-$CI_COMMIT_REF_SLUG
@@ -10,6 +10,6 @@ qodana:
         paths:
            - .qodana/cache
    variables:
-      QODANA_TOKEN: $eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0IjoiQWxybDEiLCJvcmdhbml6YXRpb24iOiJBUlowTCIsInRva2VuIjoiQUc4bHIifQ.0jQVDRTIxnzNin-vQ25U3Z3562UquqyXUJhF-pj713Y
+      QODANA_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0IjoiQWxybDEiLCJvcmdhbml6YXRpb24iOiJBUlowTCIsInRva2VuIjoiQUc4bHIifQ.0jQVDRTIxnzNin-vQ25U3Z3562UquqyXUJhF-pj713Y
    script:
       - qodana --cache-dir=$CI_PROJECT_DIR/.qodana/cache
