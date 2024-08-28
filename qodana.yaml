@@ -1,0 +1,6 @@
+version: "1.0"
+
+bootstrap: |
+  rm -rf .idea  
+  pyenv install 3.9.15
+  pyenv global 3.9.15

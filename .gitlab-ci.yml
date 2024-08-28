@@ -12,4 +12,11 @@ qodana:
    variables:
       QODANA_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0IjoiQWxybDEiLCJvcmdhbml6YXRpb24iOiJBUlowTCIsInRva2VuIjoiQUc4bHIifQ.0jQVDRTIxnzNin-vQ25U3Z3562UquqyXUJhF-pj713Y
    script:
-      - qodana --cache-dir=$CI_PROJECT_DIR/.qodana/cache
+      - apt-get update && apt-get install -y curl git gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
+      - curl https://pyenv.run | bash
+      - export PATH="/root/.pyenv/bin:$PATH"
+      - eval "$(pyenv init --path)"
+      - eval "$(pyenv init -)"
+      - pyenv install 3.9.15
+      - pyenv global 3.9.15
+      - qodana --fail-threshold 1 --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
