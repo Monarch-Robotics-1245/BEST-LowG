@@ -101,9 +101,10 @@ class AnalogSensor:
 
 
 class Motor:
-    def __init__(self, pin):
+    def __init__(self, pin, switch_polarity):
         self.pin = pin
         self.value = 0
+        self.switch_polarity = switch_polarity
 
     def off(self):
         self.value = 0
@@ -116,6 +117,9 @@ class Motor:
 
     def debug_print_value(self):
         print(self.value)
+
+    def debug_print_switch_polarity(self):
+        print(self.switch_polarity)
 
 
 class Servo:
@@ -131,7 +135,7 @@ class Servo:
 
 
 class Joystick:
-    def __init__(self, is_partner):
+    def __init__(self, is_partner=False):
         self.is_partner = is_partner
         self.axis1 = 0
         self.axis2 = 0
