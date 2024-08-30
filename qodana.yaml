@@ -4,3 +4,12 @@ bootstrap: |
   rm -rf .idea  
   pyenv install 3.9.15
   pyenv global 3.9.15
+
+exclude:
+  - name: All
+    paths:
+      - program.py
+      - vex.py
+      - AUTOS.md
+      - README.md
+      - CONSTANTS.md
