@@ -1,5 +1,4 @@
 # VEX EDR Python-Project
-import sys
 import vex
 import constants.constants as constants
 
