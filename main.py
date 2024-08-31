@@ -13,4 +13,4 @@ while True:
     if joystick.b7left():
         auto.runAuto()
 
-    #drivetrain.runDrivetrain
+    # drivetrain.runDrivetrain()
