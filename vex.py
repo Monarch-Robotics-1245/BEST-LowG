@@ -136,159 +136,159 @@ class Servo:
 
 class Joystick:
     def __init__(self, is_partner=False):
-        self.is_partner = is_partner
-        self.axis1 = 0
-        self.axis2 = 0
-        self.axis3 = 0
-        self.axis4 = 0
-        self.accelX = 0
-        self.accelY = 0
-        self.b5up = False
-        self.b5down = False
-        self.b6up = False
-        self.b6down = False
-        self.b7up = False
-        self.b7down = False
-        self.b7left = False
-        self.b7right = False
-        self.b8up = False
-        self.b8down = False
-        self.b8left = False
-        self.b8right = False
-        self.deadband = 0
+        self._is_partner = is_partner
+        self._axis1 = 0
+        self._axis2 = 0
+        self._axis3 = 0
+        self._axis4 = 0
+        self._accelX = 0
+        self._accelY = 0
+        self._b5up = False
+        self._b5down = False
+        self._b6up = False
+        self._b6down = False
+        self._b7up = False
+        self._b7down = False
+        self._b7left = False
+        self._b7right = False
+        self._b8up = False
+        self._b8down = False
+        self._b8left = False
+        self._b8right = False
+        self._deadband = 0
 
     def is_partner(self):
-        return self.is_partner
+        return self._is_partner
 
     def set_deadband(self, deadband):
-        self.deadband = deadband
+        self._deadband = deadband
 
     def axis1(self):
-        return self.axis1
+        return self._axis1
 
     def axis2(self):
-        return self.axis2
+        return self._axis2
 
     def axis3(self):
-        return self.axis3
+        return self._axis3
 
     def axis4(self):
-        return self.axis4
+        return self._axis4
 
     def accelX(self):
-        return self.accelX
+        return self._accelX
 
     def accelY(self):
-        return self.accelY
+        return self._accelY
 
     def b5up(self):
-        return self.b5up
+        return self._b5up
 
     def b5down(self):
-        return self.b5down
+        return self._b5down
 
     def b6up(self):
-        return self.b6up
+        return self._b6up
 
     def b6down(self):
-        return self.b6down
+        return self._b6down
 
     def b7up(self):
-        return self.b7up
+        return self._b7up
 
     def b7down(self):
-        return self.b7down
+        return self._b7down
 
     def b7left(self):
-        return self.b7left
+        return self._b7left
 
     def b7right(self):
-        return self.b7right
+        return self._b7right
 
     def b8up(self):
-        return self.b8up
+        return self._b8up
 
     def b8down(self):
-        return self.b8down
+        return self._b8down
 
     def b8left(self):
-        return self.b8left
+        return self._b8left
 
     def b8right(self):
-        return self.b8right
+        return self._b8right
 
     def debug_print_values(self):
-        print(self.axis1)
-        print(self.axis2)
-        print(self.axis3)
-        print(self.axis4)
-        print(self.accelX)
-        print(self.accelY)
-        print(self.b5up)
-        print(self.b5down)
-        print(self.b6up)
-        print(self.b6down)
-        print(self.b7up)
-        print(self.b7down)
-        print(self.b7left)
-        print(self.b7right)
-        print(self.b8up)
-        print(self.b8down)
-        print(self.b8left)
-        print(self.b8right)
-        print(self.deadband)
-        print(self.is_partner)
+        print(self._axis1)
+        print(self._axis2)
+        print(self._axis3)
+        print(self._axis4)
+        print(self._accelX)
+        print(self._accelY)
+        print(self._b5up)
+        print(self._b5down)
+        print(self._b6up)
+        print(self._b6down)
+        print(self._b7up)
+        print(self._b7down)
+        print(self._b7left)
+        print(self._b7right)
+        print(self._b8up)
+        print(self._b8down)
+        print(self._b8left)
+        print(self._b8right)
+        print(self._deadband)
+        print(self._is_partner)
 
     def debug_set_axis1(self, value):
-        self.axis1 = value
+        self._axis1 = value
 
     def debug_set_axis2(self, value):
-        self.axis2 = value
+        self._axis2 = value
 
     def debug_set_axis3(self, value):
-        self.axis3 = value
+        self._axis3 = value
 
     def debug_set_axis4(self, value):
-        self.axis4 = value
+        self._axis4 = value
 
     def debug_set_accelX(self, value):
-        self.accelX = value
+        self._accelX = value
 
     def debug_set_accelY(self, value):
-        self.accelY = value
+        self._accelY = value
 
     def debug_set_b5up(self, value):
-        self.b5up = value
+        self._b5up = value
 
     def debug_set_b5down(self, value):
-        self.b5down = value
+        self._b5down = value
 
     def debug_set_b6up(self, value):
-        self.b6up = value
+        self._b6up = value
 
     def debug_set_b6down(self, value):
-        self.b6down = value
+        self._b6down = value
 
     def debug_set_b7up(self, value):
-        self.b7up = value
+        self._b7up = value
 
     def debug_set_b7down(self, value):
-        self.b7down = value
+        self._b7down = value
 
     def debug_set_b7left(self, value):
-        self.b7left = value
+        self._b7left = value
 
     def debug_set_b7right(self, value):
-        self.b7right = value
+        self._b7right = value
 
     def debug_set_b8up(self, value):
-        self.b8up = value
+        self._b8up = value
 
     def debug_set_b8down(self, value):
-        self.b8down = value
+        self._b8down = value
 
     def debug_set_b8left(self, value):
-        self.b8left = value
+        self._b8left = value
 
     def debug_set_b8right(self, value):
-        self.b8right = value
+        self._b8right = value
