@@ -13,3 +13,5 @@ exclude:
       - AUTOS.md
       - README.md
       - CONSTANTS.md
+  - name: PyPep8NamingInspection
+
