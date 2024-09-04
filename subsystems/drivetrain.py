@@ -26,5 +26,5 @@ eightL = 0
 # End Standard Declaration
 
 def drive():
-    leftMotor = 1
-    rightMotor = 1
+    leftMotor = axisThree
+    rightMotor = axisTwo
