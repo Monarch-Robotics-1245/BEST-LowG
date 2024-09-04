@@ -1,16 +1,18 @@
-# VEX EDR Python-Project
-import vex
-import constants.constants as constants
-import autos.auto as auto
+import subsystems.drivetrain
+import autos.auto
 
-# region config
-joystick = vex.Joystick()
-leftMotor = vex.Motor(constants.LEFT_MOTOR_ID, constants.LEFT_MOTOR_POLARITY)
-rightMotor = vex.Motor(constants.RIGHT_MOTOR_ID, constants.RIGHT_MOTOR_POLARITY)
-# endregion config
+def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL):
 
-while True:
-    if joystick.b7left():
-        auto.runAuto()
+    leftMotor = 0
+    rightMotor = 0
+    motorOne = 0
+    motorTwo = 0
+    servoOne = 0
+    servoTwo = 0
+    servoThree = 0
+    servoFour = 0
 
-    # drivetrain.runDrivetrain()
+    subsystems.drivetrain.drive()
+    autos.auto.auto()
+    #call functions here
+    return leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour
