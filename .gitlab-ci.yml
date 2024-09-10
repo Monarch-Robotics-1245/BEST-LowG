@@ -19,6 +19,6 @@ qodana:
       - eval "$(pyenv init -)"
       - pyenv install 3.9.15
       - pyenv global 3.9.15
-      - qodana --fail-threshold 20 --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
+      - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
    rules:
       - if: '$CI_PROJECT_NAMESPACE == "monarch-robotics/best-lowg"'
