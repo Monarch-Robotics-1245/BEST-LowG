@@ -46,9 +46,9 @@ Axis 4 (Left Vertical):
 ## Code Formatting
 Please try to follow the PEP 8 Style Guide. 
 
-Please insert this code snippet at the top of all files to initalize the function variables. This may be changed over the season:
+Please insert this code snippet at the top of all files to initalize the function variables. This may be changed over the season****:
 ```python
-# Standard Declaration
+"""Standard Declaration
 leftMotor = 0
 rightMotor = 0
 motorOne = 0
@@ -73,5 +73,5 @@ eightR = 0
 eightD = 0
 eightU = 0
 eightL = 0
-# End Standard Declaration
+End Standard Declaration"""
 ```
