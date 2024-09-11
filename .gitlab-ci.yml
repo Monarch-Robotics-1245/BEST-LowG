@@ -21,4 +21,4 @@ qodana:
       - pyenv global 3.9.15
       - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
    rules:
-      - if: '$CI_PROJECT_NAMESPACE == "monarch-robotics/best-lowg"'
+      - if: '$CI_PROJECT_PATH == "monarch-robotics/best-lowg/best-lowg"'
