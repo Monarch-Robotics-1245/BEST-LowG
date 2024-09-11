@@ -1,4 +1,4 @@
-# Standard Declaration
+""" Standard Declaration
 leftMotor = 0
 rightMotor = 0
 motorOne = 0
@@ -23,8 +23,8 @@ eightR = 0
 eightD = 0
 eightU = 0
 eightL = 0
-# End Standard Declaration
+End Standard Declaration """
 
-def drive():
+def drive(axisTwo, axisThree):
     leftMotor = axisThree
     rightMotor = axisTwo
