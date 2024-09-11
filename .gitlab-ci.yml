@@ -22,3 +22,6 @@ qodana:
       - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
    rules:
       - if: '$CI_PROJECT_PATH == "monarch-robotics/best-lowg/best-lowg"'
+        when: always
+      - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+        when: never
