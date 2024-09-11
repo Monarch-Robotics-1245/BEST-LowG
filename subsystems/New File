@@ -1,0 +1,6 @@
+def servo(sevenU, sevenL, previousServoOne):
+    if sevenU == 0:
+        servoOne = 127
+elsif sevenL == 1:
+    servoOne = 0
+else: servoOne = previousServoOne
