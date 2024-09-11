@@ -1,6 +1,7 @@
 import subsystems.drivetrain
 import autos.auto
 
+
 def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL):
 
     leftMotor = 0
@@ -14,5 +15,5 @@ def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, seven
 
     subsystems.drivetrain.drive(axisTwo, axisThree)
     autos.auto.auto()
-    #call functions here
+    # call functions here
     return leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour
