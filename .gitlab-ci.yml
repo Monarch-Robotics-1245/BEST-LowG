@@ -1,6 +1,6 @@
 qodana:
   image:
-    name: python:3.9.15
+    name: jetbrains/qodana-python-community
     entrypoint: [""]
   cache:
     - key: qodana-2024.1-$CI_DEFAULT_BRANCH-$CI_COMMIT_REF_SLUG
@@ -10,9 +10,8 @@ qodana:
       paths:
         - .qodana/cache
   variables:
-    QODANA_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+    QODANA_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0IjoiQWxybDEiLCJvcmdhbml6YXRpb24iOiJBUlowTCIsInRva2VuIjoiQUc4bHIifQ.0jQVDRTIxnzNin-vQ25U3Z3562UquqyXUJhF-pj713Y
   script:
-    - pip install qodana # directly install Qodana instead of installing pyenv and Python
     - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
   rules:
     - if: '$CI_PROJECT_PATH == "monarch-robotics/best-lowg/best-lowg"'
