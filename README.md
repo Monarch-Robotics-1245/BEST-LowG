@@ -2,6 +2,10 @@
 # BEST LowG
 ## Description
 Monarch Robotics code for the 2024 BEST LowG Season
+## Python Comment Syntax
+```python
+# Comment```
+
 ## Ports and Inputs
 ### Motors
 ```text
