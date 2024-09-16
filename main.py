@@ -3,7 +3,7 @@ import autos.auto
 import subsystems.servo
 
 
-def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL, priviousServoOne):
+def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL, previousServoOne):
 
     leftMotor = 0
     rightMotor = 0
@@ -16,5 +16,5 @@ def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, seven
 
     subsystems.drivetrain.drive(axisTwo, axisThree)
     autos.auto.auto()
-    subsystems.servo.servo(sevenU,sevenL,priviousServoOne)
+    # call functions here
     return leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour
