@@ -1,6 +1,6 @@
 qodana:
   image:
-    name: jetbrains/qodana-python-community
+    name: python:3.9.15
     entrypoint: [""]
   cache:
     - key: qodana-2024.1-$CI_DEFAULT_BRANCH-$CI_COMMIT_REF_SLUG
@@ -9,19 +9,10 @@ qodana:
         - qodana-2024.1-
       paths:
         - .qodana/cache
-    - key: pyenv-cache
-      paths:
-        - /root/.pyenv/versions/ # cache the installed Python versions
   variables:
     QODANA_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
   script:
-    - apt-get update && apt-get install -y curl git gcc make build-essential
-    - curl https://pyenv.run | bash
-    - export PATH="/root/.pyenv/bin:$PATH"
-    - eval "$(pyenv init --path)"
-    - eval "$(pyenv init -)"
-    - pyenv install --skip-existing 3.9.15 # Skip installation if already cached
-    - pyenv global 3.9.15
+    - pip install qodana # directly install Qodana instead of installing pyenv and Python
     - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
   rules:
     - if: '$CI_PROJECT_PATH == "monarch-robotics/best-lowg/best-lowg"'
