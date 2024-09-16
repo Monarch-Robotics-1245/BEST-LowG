@@ -1,5 +1,8 @@
 version: "1.0"
 
+bootstrap: |
+  python3 --version
+
 exclude:
   - name: All
     paths:
