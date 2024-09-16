@@ -16,5 +16,5 @@ def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, seven
 
     subsystems.drivetrain.drive(axisTwo, axisThree)
     autos.auto.auto()
-    subsystems.servo.servo(sevenU, sevenL, previousServoOne)
+    # call functions here
     return leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour
