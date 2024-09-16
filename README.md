@@ -16,14 +16,17 @@ Port 8:
 Port 9:  
 Port 10: 
 ```
+> Motors should be set to a double from a range of -127 to 127 where 127 is 100% and -127 is -100%
 ### Digital Inputs
 ```text
 Digital 1: 
 ```
+> Digital Inputs output a 1 for True and a 0 for False. They are not boolean variables
 ### Analog Inputs
 ```text
 Analog 1: 
 ```
+> Analog Inputs output a range from -127 to 127 where 127 is 100% and -127 is -100%
 ### Joystick Controls
 ```text
 Axis 1 (Right Horizontal):  
@@ -43,6 +46,8 @@ Axis 4 (Left Vertical):
 8D (Right DPad Down):       
 8R (Right DPad Right):      
 ```
+> Joystick Buttons output a 1 for True and a 0 for False. They are not boolean variables
+> Joystick Axis output a range from -127 to 127 where 127 is 100% and -127 is -100%
 ## Code Formatting
 Please try to follow the PEP 8 Style Guide. 
 
