@@ -12,6 +12,7 @@ qodana:
   variables:
     QODANA_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0IjoiQWxybDEiLCJvcmdhbml6YXRpb24iOiJBUlowTCIsInRva2VuIjoiQUc4bHIifQ.0jQVDRTIxnzNin-vQ25U3Z3562UquqyXUJhF-pj713Y
   script:
+    - rm -rf .qodana/cache  # Clear previous Qodana cache to avoid stale issues
     - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
   rules:
     - if: '$CI_PROJECT_PATH == "monarch-robotics/best-lowg/best-lowg"'

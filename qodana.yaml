@@ -1,14 +1,38 @@
 version: "1.0"
 
 bootstrap: |
-  python3 --version
+  python3 -m venv venv  # Create a virtual environment if not exists
+  source venv/bin/activate
+  python --version  # Verify Python version inside the virtual environment
 
 exclude:
-  - name: All
+  - name: Exclude system files
     paths:
-      - program.py
-      - vex.py
-      - AUTOS.md
-      - README.md
-      - CONSTANTS.md
-  - name: PyPep8NamingInspection
+      - /usr/bin/pip*
+      - /usr/lib/python3*/**/*
+      - /usr/local/lib/python3*/**/*
+
+  - name: Exclude virtual environments
+    paths:
+      - venv/*
+      - .venv/*
+      - env/*
+
+  - name: Exclude test files or non-critical files
+    paths:
+      - test/*
+      - tests/*
+
+include:
+  - name: Include only project directories
+    paths:
+      - Subsystems/*
+      - Autos/*
+      - main.py
+
+# Customize analysis behavior
+rules:
+  - name: Do not run on merge requests
+    condition: |
+      $CI_PIPELINE_SOURCE == "merge_request_event"
+    when: never
