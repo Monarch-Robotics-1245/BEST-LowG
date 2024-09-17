@@ -34,3 +34,5 @@ def servo(sevenU, sevenL, previousServoOne):
         servoOne = 0
     else:
         servoOne = previousServoOne
+        
+    return servoOne

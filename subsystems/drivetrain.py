@@ -31,3 +31,5 @@ End Standard Declaration """
 def drive(axisTwo, axisThree):
     leftMotor = axisThree
     rightMotor = axisTwo
+
+    return leftMotor, rightMotor
