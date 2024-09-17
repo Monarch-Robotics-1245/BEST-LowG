@@ -1,9 +1,8 @@
 version: "1.0"
 
 bootstrap: |
-  python3 -m venv venv  # Create a virtual environment if not exists
-  source venv/bin/activate
-  python --version  # Verify Python version inside the virtual environment
+  # Ensure Python is set up correctly
+  python3 --version
 
 exclude:
   - name: Exclude system files
@@ -29,10 +28,3 @@ include:
       - Subsystems/*
       - Autos/*
       - main.py
-
-# Customize analysis behavior
-rules:
-  - name: Do not run on merge requests
-    condition: |
-      $CI_PIPELINE_SOURCE == "merge_request_event"
-    when: never
