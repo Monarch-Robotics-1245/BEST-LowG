@@ -1,7 +1,9 @@
 version: "1.0"
 
 bootstrap: |
-  python3 --version
+  python3 -m venv venv  # Create a virtual environment if not exists
+  source venv/bin/activate
+  python --version  # Verify Python version inside the virtual environment
 
 exclude:
   - name: All
