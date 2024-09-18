@@ -3,8 +3,34 @@
 ## Description
 Monarch Robotics code for the 2024 BEST LowG Season
 ## Python Comment Syntax
+### Block Comment
+A block comment explains a section of code and spans multiple lines. Each line starts with a `#` followed by a space. These comments describe *how* or *why* the code works, and should be used for larger code explanations.
+
 ```python
-# Comment```
+# This is a block comment explaining the following code.
+# It helps to clarify complex logic or describe non-obvious code behavior.
+
+for i in range(10):
+    print(i)
+```
+> We mainly use block comments
+### Docstring
+A docstring is a string literal used to document modules, classes, and functions. It describes *what* the code does. Docstrings are enclosed in triple quotes (`"""`) and placed inside the function, class, or module definition.
+
+```python
+def add(a, b):
+    """
+    Add two numbers and return the result.
+
+    Parameters:
+    a (int): First number
+    b (int): Second number
+
+    Returns:
+    int: Sum of a and b
+    """
+    return a + b
+```
 
 ## Ports and Inputs
 ### Motors
