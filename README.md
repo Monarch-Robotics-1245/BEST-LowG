@@ -12,7 +12,6 @@ This directory contains all the commands that the robot can run. Commands are re
 This directory contains all the autonomous routines that the robot can run. Autos are reusable pieces of code that can be run from the main file. Autos are used for autonomous actions done by the robot. Autos are also used for driver assistance during the teleop period.
 ### `subsystems/`
 This directory contains all the subsystems that the robot uses. Subsystems are reusable pieces of code that can be run from the main file. Subsystems are used for controlling the robot's hardware.
-![EyeSight](https://s7d1.scene7.com/is/image/scom/2019_Ascent_EyeSight_Hero_with_Logo_Overlay?$1450w$)
 ## **EyeSight**
 EyeSight is the driver assistance technology system that the robot runs. it is toggleable by the driver and only runs when the onboard enable switch is inserted. EyeSight is used to assist the driver in the teleop period. EyeSight is not used in the autonomous period. EyeSight files are called by `main.py` and are located in the `autos/` directory.
 ## **Python Comment Syntax**
