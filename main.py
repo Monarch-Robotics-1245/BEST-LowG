@@ -16,7 +16,7 @@ def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, seven
     servoThree = 0
     servoFour = 0
     # 0 (not pressed) and 1(pressed) - not True and False for buttons
-    subsystems.drivetrain.drive(axisTwo, axisThree)
+    subsystems.drivetrain.drive(axisOne, axisThree)
     autos.auto.auto()
     subsystems.servo.servo(eightU, eightD, previousServoOne)
     # call functions here
