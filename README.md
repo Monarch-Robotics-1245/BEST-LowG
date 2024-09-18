@@ -1,8 +1,20 @@
 ![qodana](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/badges/main/pipeline.svg) ![release](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/-/badges/release.svg)
 # BEST LowG
-## Description
+## **Description**
 Monarch Robotics code for the 2024 BEST LowG Season
-## Python Comment Syntax
+## **Project Structure**
+### `main.py`
+The main file that runs the robot code. This file should be run on the robot.
+Commands and autos can be run from this file.
+### `commands/`
+This directory contains all the commands that the robot can run. Commands are reusable pieces of code that can be run from the main file. Commands are used for manual actions done by the driver.
+### `autos/`
+This directory contains all the autonomous routines that the robot can run. Autos are reusable pieces of code that can be run from the main file. Autos are used for autonomous actions done by the robot. Autos are also used for driver assistance during the teleop period.
+### `subsystems/`
+This directory contains all the subsystems that the robot uses. Subsystems are reusable pieces of code that can be run from the main file. Subsystems are used for controlling the robot's hardware.
+## **Eyesight**
+Eyesight is the driver assistance technology system that the robot runs. it is toggleable by the driver and only runs when the onboard enable switch is inserted. Eyesight is used to assist the driver in the teleop period. Eyesight is not used in the autonomous period. Eyesigth files are called by `main.py` and are located in the `autos/` directory.
+## **Python Comment Syntax**
 ### Block Comment
 A block comment explains a section of code and spans multiple lines. Each line starts with a `#` followed by a space. These comments describe *how* or *why* the code works, and should be used for larger code explanations.
 
@@ -32,7 +44,7 @@ def add(a, b):
     return a + b
 ```
 
-## Ports and Inputs
+## **Ports and Inputs**
 ### Motors
 ```text
 Port 1:  
@@ -79,7 +91,7 @@ Axis 4 (Left Vertical):
 > Joystick Buttons output a 1 for True and a 0 for False. They are not boolean variables
 
 > Joystick Axis output a range from -127 to 127 where 127 is 100% and -127 is -100%
-## Code Formatting
+## **Code Formatting**
 Please try to follow the PEP 8 Style Guide. 
 
 Please insert this code snippet at the top of all files to initalize the function variables. This may be changed over the season****:
