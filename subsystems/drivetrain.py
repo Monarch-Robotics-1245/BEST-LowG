@@ -28,8 +28,8 @@
 # End Standard Declaration
 
 
-def drive(axisTwo, axisThree):
-    leftMotor = axisThree
-    rightMotor = axisTwo
+def setLeftMotor(value):
+    leftMotor = value
 
-    return leftMotor, rightMotor
+def setRightMotor(value):
+    rightMotor = value

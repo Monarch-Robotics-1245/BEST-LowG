@@ -94,7 +94,7 @@ Axis 4 (Left Vertical):
 ## **Code Formatting**
 Please try to follow the PEP 8 Style Guide. 
 
-Please insert this code snippet at the top of all files to initalize the function variables. This may be changed over the season****:
+Please insert this code snippet at the top of all files to initialize the function variables. This may be changed over the season****:
 ```python
 # Standard Declaration
 # leftMotor = 0
