@@ -5,8 +5,7 @@ import autos.auto
 import subsystems.servo
 
 
-def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL, previousServoOne):
-
+def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL, previousServoOne):    
     leftMotor = 0
     rightMotor = 0 # max declared is 127
     motorOne = 0
