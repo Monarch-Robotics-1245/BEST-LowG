@@ -26,11 +26,3 @@
 # eightU = 0
 # eightL = 0
 # End Standard Declaration
-
-
-
-def auto():
-    leftMotor = 0
-    rightMotor = 0
-
-    return leftMotor, rightMotor

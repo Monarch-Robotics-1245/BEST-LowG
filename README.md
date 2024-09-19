@@ -13,7 +13,7 @@ This directory contains all the autonomous routines that the robot can run. Auto
 ### `subsystems/`
 This directory contains all the subsystems that the robot uses. Subsystems are reusable pieces of code that can be run from the main file. Subsystems are used for controlling the robot's hardware.
 ## **Eyesight**
-Eyesight is the driver assistance technology system that the robot runs. it is toggleable by the driver and only runs when the onboard enable switch is inserted. Eyesight is used to assist the driver in the teleop period. Eyesight is not used in the autonomous period. Eyesigth files are called by `main.py` and are located in the `autos/` directory.
+Eyesight is the driver assistance technology system that the robot runs. it is toggleable by the driver and only runs when the onboard enable switch is inserted. Eyesight is used to assist the driver in the teleop period. Eyesight is not used in the autonomous period. EyeSight files are called by `main.py` and are located in the `autos/` directory.
 ## **Python Comment Syntax**
 ### Block Comment
 A block comment explains a section of code and spans multiple lines. Each line starts with a `#` followed by a space. These comments describe *how* or *why* the code works, and should be used for larger code explanations.
@@ -94,7 +94,7 @@ Axis 4 (Left Vertical):
 ## **Code Formatting**
 Please try to follow the PEP 8 Style Guide. 
 
-Please insert this code snippet at the top of all files to initalize the function variables. This may be changed over the season****:
+Please insert this code snippet at the top of all files to initialize the function variables. This may be changed over the season****:
 ```python
 # Standard Declaration
 # leftMotor = 0
