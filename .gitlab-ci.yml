@@ -1,27 +1,21 @@
 qodana:
-   image:
-      name: jetbrains/qodana-python-community
-      entrypoint: [""]
-   cache:
-      - key: qodana-2024.1-$CI_DEFAULT_BRANCH-$CI_COMMIT_REF_SLUG
-        fallback_keys:
-           - qodana-2024.1-$CI_DEFAULT_BRANCH-
-           - qodana-2024.1-
-        paths:
-           - .qodana/cache
-   variables:
-      QODANA_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0IjoiQWxybDEiLCJvcmdhbml6YXRpb24iOiJBUlowTCIsInRva2VuIjoiQUc4bHIifQ.0jQVDRTIxnzNin-vQ25U3Z3562UquqyXUJhF-pj713Y
-   script:
-      - apt-get update && apt-get install -y curl git gcc make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev
-      - curl https://pyenv.run | bash
-      - export PATH="/root/.pyenv/bin:$PATH"
-      - eval "$(pyenv init --path)"
-      - eval "$(pyenv init -)"
-      - pyenv install 3.9.15
-      - pyenv global 3.9.15
-      - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
-   rules:
-      - if: '$CI_PROJECT_PATH == "monarch-robotics/best-lowg/best-lowg"'
-        when: always
-      - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-        when: never
+  image:
+    name: jetbrains/qodana-python-community
+    entrypoint: [""]
+  cache:
+    - key: qodana-2024.1-$CI_DEFAULT_BRANCH-$CI_COMMIT_REF_SLUG
+      fallback_keys:
+        - qodana-2024.1-$CI_DEFAULT_BRANCH-
+        - qodana-2024.1-
+      paths:
+        - .qodana/cache
+  variables:
+    QODANA_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0IjoiQURXdmoiLCJvcmdhbml6YXRpb24iOiJBUlowTCIsInRva2VuIjoiQU43VmIifQ.cG0PJkTyYd4zQMZZ1JP0xyg1gQV6RDuKICSW0wYQ6LE
+  script:
+    - rm -rf .qodana/cache  # Clear previous Qodana cache to avoid stale issues
+    - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
+  rules:
+    - if: '$CI_PROJECT_PATH == "monarch-robotics/best-lowg/best-lowg"'
+      when: always
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never

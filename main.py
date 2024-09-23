@@ -1,20 +1,15 @@
-import subsystems.drivetrain
-import autos.auto
-import subsystems.servo
+#!/usr/bin/env python3
+
+import commands.drivetrain
 
 
-def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL, previousServoOne):
+def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL, previousEightR, previousEightL, leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, direction, speedMultiplier):
 
-    leftMotor = 0
-    rightMotor = 0
-    motorOne = 0
-    motorTwo = 0
-    servoOne = 0
-    servoTwo = 0
-    servoThree = 0
-    servoFour = 0
+    # Constants
+    SLOW_SPEED = .25
+    FAST_SPEED = 1
 
-    subsystems.drivetrain.drive(axisTwo, axisThree)
-    autos.auto.auto()
-    subsystem.servo.servo(sevenU, sevenL, previousServoOne)
-    return leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour
+    # 0 (not pressed) and 1(pressed) - not True and False for buttons
+    commands.drivetrain.drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previousEightR, previousEightL, SLOW_SPEED, FAST_SPEED)
+
+    return leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, direction, speedMultiplier

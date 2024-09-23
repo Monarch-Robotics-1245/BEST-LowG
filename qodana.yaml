@@ -1,17 +1,32 @@
 version: "1.0"
 
 bootstrap: |
-  rm -rf .idea  
-  pyenv install 3.9.15
-  pyenv global 3.9.15
+  # Ensure Python is set up correctly
+  python3 --version
 
 exclude:
-  - name: All
+  - name: Exclude system files
     paths:
-      - program.py
-      - vex.py
-      - AUTOS.md
-      - README.md
-      - CONSTANTS.md
-  - name: PyPep8NamingInspection
+      - /usr/bin/pip*
+      - /usr/lib/python3*/**/*
+      - /usr/local/lib/python3*/**/*
 
+  - name: Exclude virtual environments
+    paths:
+      - venv/*
+      - .venv/*
+      - env/*
+
+  - name: Exclude test files or non-critical files
+    paths:
+      - test/*
+      - tests/*
+  - name: PyPep8NamingInspection
+  - name: PyUnusedLocalInspection
+
+include:
+  - name: Include only project directories
+    paths:
+      - Subsystems/*
+      - Autos/*
+      - main.py

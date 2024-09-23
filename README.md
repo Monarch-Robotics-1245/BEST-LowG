@@ -1,8 +1,50 @@
-![qodana](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/badges/main/pipeline.svg)![release](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/-/badges/release.svg)
+![qodana](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/badges/main/pipeline.svg) ![release](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/-/badges/release.svg)
 # BEST LowG
-## Description
+## **Description**
 Monarch Robotics code for the 2024 BEST LowG Season
-## Ports and Inputs
+## **Project Structure**
+### `main.py`
+The main file that runs the robot code. This file should be run on the robot.
+Commands and autos can be run from this file.
+### `commands/`
+This directory contains all the commands that the robot can run. Commands are reusable pieces of code that can be run from the main file. Commands are used for manual actions done by the driver.
+### `autos/`
+This directory contains all the autonomous routines that the robot can run. Autos are reusable pieces of code that can be run from the main file. Autos are used for autonomous actions done by the robot. Autos are also used for driver assistance during the teleop period.
+### `subsystems/`
+This directory contains all the subsystems that the robot uses. Subsystems are reusable pieces of code that can be run from the main file. Subsystems are used for controlling the robot's hardware.
+## **EyeSight**
+EyeSight is the driver assistance technology system that the robot runs. it is toggleable by the driver and only runs when the onboard enable switch is inserted. EyeSight is used to assist the driver in the teleop period. EyeSight is not used in the autonomous period. EyeSight files are called by `main.py` and are located in the `autos/` directory.
+## **Python Comment Syntax**
+### Block Comment
+A block comment explains a section of code and spans multiple lines. Each line starts with a `#` followed by a space. These comments describe *how* or *why* the code works, and should be used for larger code explanations.
+
+```python
+# This is a block comment explaining the following code.
+# It helps to clarify complex logic or describe non-obvious code behavior.
+
+for i in range(10):
+    print(i)
+```
+> We mainly use block comments
+### Docstring
+A docstring is a string literal used to document modules, classes, and functions. It describes *what* the code does. Docstrings are enclosed in triple quotes (`"""`) and placed inside the function, class, or module definition.
+
+```python
+def add(a, b):
+    """
+    Add two numbers and return the result.
+
+    Parameters:
+    a (int): First number
+    b (int): Second number
+
+    Returns:
+    int: Sum of a and b
+    """
+    return a + b
+```
+
+## **Ports and Inputs**
 ### Motors
 ```text
 Port 1:  
@@ -16,14 +58,17 @@ Port 8:
 Port 9:  
 Port 10: 
 ```
+> Motors should be set to a double from a range of -127 to 127 where 127 is 100% and -127 is -100%
 ### Digital Inputs
 ```text
 Digital 1: 
 ```
+> Digital Inputs output a 1 for True and a 0 for False. They are not boolean variables
 ### Analog Inputs
 ```text
 Analog 1: 
 ```
+> Analog Inputs output a range from -127 to 127 where 127 is 100% and -127 is -100%
 ### Joystick Controls
 ```text
 Axis 1 (Right Horizontal):  
@@ -43,35 +88,38 @@ Axis 4 (Left Vertical):
 8D (Right DPad Down):       
 8R (Right DPad Right):      
 ```
-## Code Formatting
+> Joystick Buttons output a 1 for True and a 0 for False. They are not boolean variables
+
+> Joystick Axis output a range from -127 to 127 where 127 is 100% and -127 is -100%
+## **Code Formatting**
 Please try to follow the PEP 8 Style Guide. 
 
-Please insert this code snippet at the top of all files to initalize the function variables. This may be changed over the season****:
+Please insert this code snippet at the top of all files to initialize the function variables. This may be changed over the season****:
 ```python
-"""Standard Declaration
-leftMotor = 0
-rightMotor = 0
-motorOne = 0
-motorTwo = 0
-servoOne = 0
-servoTwo = 0
-servoThree = 0
-servoFour = 0
-axisOne = 0
-axisTwo = 0
-axisThree = 0
-axisFour = 0
-fiveU = 0
-fiveD = 0
-sixU = 0
-sixD = 0
-sevenU = 0
-sevenL = 0
-sevenR = 0
-sevenD = 0
-eightR = 0
-eightD = 0
-eightU = 0
-eightL = 0
-End Standard Declaration"""
+# Standard Declaration
+# leftMotor = 0
+# rightMotor = 0
+# motorOne = 0
+# motorTwo = 0
+# servoOne = 0
+# servoTwo = 0
+# servoThree = 0
+# servoFour = 0
+# axisOne = 0
+# axisTwo = 0
+# axisThree = 0
+# axisFour = 0
+# fiveU = 0
+# fiveD = 0
+# sixU = 0
+# sixD = 0
+# sevenU = 0
+# sevenL = 0
+# sevenR = 0
+# sevenD = 0
+# eightR = 0
+# eightD = 0
+# eightU = 0
+# eightL = 0
+# End Standard Declaration
 ```
