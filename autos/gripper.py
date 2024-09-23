@@ -25,5 +25,8 @@
 # eightL = 0
 # End Standard Declaration
 
+import subsystems.gripper
+import constants.gripper
+
 def autoGrip(servoOne):
     subsystems.gripper.setGripper(servoOne, constants.gripper.AUTO_CLOSE)

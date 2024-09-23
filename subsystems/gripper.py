@@ -25,12 +25,12 @@
 # eightL = 0
 # End Standard Declaration
 
+import constants.gripper
 
-
-def open(servoOne):
+def openGripper(servoOne):
     servoOne = constants.gripper.GRIPPER_OPEN
 
-def close(servoOne):
+def closeGripper(servoOne):
     servoOne = constants.gripper.GRIPPER_CLOSE
 
 def setGripper(servoOne, value)
