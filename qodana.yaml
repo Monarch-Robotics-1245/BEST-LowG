@@ -22,6 +22,7 @@ exclude:
       - test/*
       - tests/*
   - name: PyPep8NamingInspection
+  - name: PyUnusedLocalInspection
 
 include:
   - name: Include only project directories
