@@ -24,3 +24,16 @@
 # eightU = 0
 # eightL = 0
 # End Standard Declaration
+
+def setRotation(potentiometerPosition, motorTwo, value): #this sets a positive or negative direction which the motor takes
+
+    if potentiometerPosition<value: #this sets current 
+        motorTwo=constants.turret.AUTOMATIC_ROTATION_SPEED 
+
+    elif potentiometerPosition>value:
+        motorTwo=-constants.turret.AUTOMATIC_ROTATION_SPEED
+    
+    else:
+        motorTwo=value
+
+def rotate(motorTwo, potentiometerPosition): 
