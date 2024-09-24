@@ -29,4 +29,4 @@ import subsystems.gripper
 import constants.gripper
 
 def autoGrip(servoOne):
-    subsystems.gripper.setGripper(servoOne, constants.gripper.AUTO_CLOSE)
+    subsystems.arm.arm(servoOne, constants.arm.AUTO_POSITION)
