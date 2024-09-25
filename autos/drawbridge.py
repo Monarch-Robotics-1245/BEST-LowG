@@ -25,8 +25,8 @@
 # eightL = 0
 # End Standard Declaration
 
-import subsystems.wrist 
-import commands.wrist
+import subsystems.drawBridge
+import commands.drawBridge
 
-def autoWrist ():
-    subsystems.wrist.setWrist (servoTwo, constants.wrist.AUTO_POSITION)
+def autoDrawBridge():
+    subsystems.drawBridge.setDrawBridge(servoThree, constants.drawBridge.AUTO_POSITION)
