@@ -24,3 +24,6 @@
 # eightU = 0
 # eightL = 0
 # End Standard Declaration
+
+
+subsystems.turret.setMotorOne(axisThree)
