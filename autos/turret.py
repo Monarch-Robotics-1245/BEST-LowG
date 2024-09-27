@@ -26,7 +26,7 @@
 # End Standard Declaration
 
 import subsystems.turret
-import commands.turret
+import constants.turret
 
-def autoTurret():
-    subsystems.turret.setturret(motorOne, constants.turret.AUTO_POSITION)
+def autoTurret(motorOne, analogOne):
+    subsystems.turret.setTurretRotation(analogOne, motorOne, constants.turret.TURRET_AUTO_POSITION)

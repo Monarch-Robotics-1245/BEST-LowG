@@ -24,3 +24,8 @@
 # eightU = 0
 # eightL = 0
 # End Standard Declaration
+import subsystems.tower
+
+
+def moveTower(motorTwo, axisFour, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFIve, lastPosition, lastPositionSet):
+    subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFIve, motorTwo, axisFour, lastPosition, lastPositionSet)

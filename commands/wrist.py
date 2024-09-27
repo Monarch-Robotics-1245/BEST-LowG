@@ -26,7 +26,7 @@
 # End Standard Declaration
 
 def moveWrist (fiveD, fiveU)
-    if fiveU == 1 && fiveD == 1:
+    if fiveU == 1 & fiveD == 1:
         pass
     elif fiveU == 1:
         subsystems.wrist.wristUp

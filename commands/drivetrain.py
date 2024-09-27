@@ -28,13 +28,12 @@
 # End Standard Declaration
 
 import subsystems.drivetrain
+import constants.drivetrain
 
-def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previousEightR, previousEightL, SLOW_SPEED, FAST_SPEED):
+def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previousEightR, previousEightL):
     """
     Takes in the joystick values and sets the motors to the correct values
 
-    :param FAST_SPEED: double - fast speed multiplier for the robot
-    :param SLOW_SPEED: double - slow speed multiplier for the robot
     :param direction: int - 1 is backwards, 0 is forwards
     :param speedMultiplier: int - current speed multiplier for the robot
     :param axisOne: int - Joystick Axis 1
@@ -58,10 +57,10 @@ def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previous
 
 
     if previousEightL == 1 and eightL == 0:
-        if speedMultiplier == FAST_SPEED:
-            speedMultiplier = SLOW_SPEED
+        if speedMultiplier == constants.drivetrain.FAST_SPEED:
+            speedMultiplier = constants.drivetrain.SLOW_SPEED
         else:
-            speedMultiplier = FAST_SPEED
+            speedMultiplier = constants.drivetrain.FAST_SPEED
     
     left = left * speedMultiplier
     right = right * speedMultiplier
