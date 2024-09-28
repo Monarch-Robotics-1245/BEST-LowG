@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 
-import commands.drivetrain
-import commands.drawBridge
-import commands.gripper
-import commands.turret
-import commands.tower
-import commands.wrist
+import autos
+import subsystems
+import commands
 
 
 def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL, analogOne, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, lastPosition, lastPositionSet, previousSevenU, previousSevenL, previousEightR, previousEightL, leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, direction, speedMultiplier):
