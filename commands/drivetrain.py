@@ -32,17 +32,17 @@ import constants.drivetrain
 
 def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previousEightR, previousEightL):
     """
-    Takes in the joystick values and sets the motors to the correct values
-
-    :param direction: int - 1 is backwards, 0 is forwards
-    :param speedMultiplier: int - current speed multiplier for the robot
-    :param axisOne: int - Joystick Axis 1
-    :param axisTwo: int - Joystick Axis 2
-    :param eightR: int - Joystick Button 8 Right
-    :param eightL: int - Joystick Button 8 Left
-    :param previousEightR: int - Joystick Button 8 Right Previous
-    :param previousEightL: int - Joystick Button 8 Left Previous
-    :return: 
+    
+    Takes in the joystick values and sets the motors to the correct values.
+    
+    direction (int): 1 is backwards, 0 is forwards
+    speedMultiplier (int): current speed multiplier for the robot
+    axisOne (int): Joystick Axis 1
+    axisTwo (int): Joystick Axis 2
+    eightR (int): Joystick Button 8 Right
+    eightL (int): Joystick Button 8 Left
+    previousEightR (int): Joystick Button 8 Right Previous
+    previousEightL (int): Joystick Button 8 Left Previous
     """
     
     left = axisOne + axisTwo
