@@ -28,7 +28,11 @@
 import subsystems.drawBridge
 
 def gripper(servoThree, sevenU, sevenL, previousSevenU, previousSevenL):
-    if sevenU == 1 & previousSevenU == 0:
-        subsystems.drawBridge.DRAWBRIDGE_OPEN(servoThree)
-    elif sevenL == 1 & previousSevenL == 0:
-        subsystems.drawBridge.DRAWBRIDGE_CLOSE(servoThree)
+
+    if sevenU == 1 and previousSevenU == 0:
+
+        subsystems.drawBridge.openDrawBridge(servoThree)
+
+    elif sevenL == 1 and previousSevenL == 0:
+
+        subsystems.drawBridge.closeDrawBridge(servoThree)

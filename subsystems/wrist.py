@@ -25,11 +25,13 @@
 # eightL = 0
 # End Standard Declaration
 
-def wristUp (servoTwo)
-    servoTwo += constants.wrist.ROTATE_INCREMNT
+import constants.wrist
 
-def wristDown (servoTwo)
-    servoTwo -= constants.wrist.ROTATE_INCREMNT
+def wristUp (servoTwo):
+    servoTwo += constants.wrist.ROTATE_INCREMENT
+
+def wristDown (servoTwo):
+    servoTwo -= constants.wrist.ROTATE_INCREMENT
     
-def setWrist (servoTwo,value)
+def setWrist (servoTwo, value):
     servoTwo = value
