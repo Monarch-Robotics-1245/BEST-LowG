@@ -25,10 +25,8 @@
 # eightL = 0
 # End Standard Declaration
 
-import subsystems.gripper
+import constants.tower
+import subsystems.tower
 
-def gripper(servoOne, sevenU, sevenL, previousSevenU, previousSevenL):
-    if sevenU == 1 & previousSevenU == 0:
-        subsystems.gripper.openGripper(servoOne)
-    elif sevenL == 1 & previousSevenL == 0:
-        subsystems.gripper.closeGripper(servoOne)
+def autoTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, lastPosition, lastPositionSet):
+    subsystems.tower.setTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, constants.tower.TOWER_AUTO_POSITION, lastPosition, lastPositionSet)

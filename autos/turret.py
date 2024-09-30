@@ -24,3 +24,9 @@
 # eightU = 0
 # eightL = 0
 # End Standard Declaration
+
+import subsystems.turret
+import constants.turret
+
+def autoTurret(motorOne, analogOne):
+    subsystems.turret.setTurretRotation(analogOne, motorOne, constants.turret.TURRET_AUTO_POSITION)

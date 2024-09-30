@@ -24,16 +24,35 @@
 # eightU = 0
 # eightL = 0
 # End Standard Declaration
+# AnalogOne
 
-def setRotation(potentiometerPosition, motorTwo, value): #this sets a positive or negative direction which the motor takes
+import constants.turret
 
-    if potentiometerPosition<value: #this sets current 
-        motorTwo=constants.turret.AUTOMATIC_ROTATION_SPEED 
-
-    elif potentiometerPosition>value:
-        motorTwo=-constants.turret.AUTOMATIC_ROTATION_SPEED
-    
+def setTurretMotor(analogOne, motorOne, value):
+    if analogOne > constants.turret.TURRET_UPPER_LIMIT:
+        if 0 > value:
+            motorOne = value
+        else:
+            motorOne = 0
+    elif analogOne < constants.turret.TURRET_LOWER_LIMIT:
+        if 0 < value:
+            motorOne = value
+        else:
+            motorOne = 0
     else:
-        motorTwo=value
+        motorOne = value
 
-def rotate(motorTwo, potentiometerPosition): 
+def setTurretRotation(analogOne, motorOne, rotation):
+    rotation *= constants.turret.TURRET_ANGLE_CONVERSION
+    if analogOne + constants.turret.TURRET_SLOW_ZONE > rotation:
+        motorOne = constants.turret.TURRET_FAST_ROTATE_SPEED
+    elif analogOne - constants.turret.TURRET_SLOW_ZONE < rotation:
+        motorOne = -constants.turret.TURRET_FAST_ROTATE_SPEED
+    elif analogOne + constants.turret.TURRET_DEAD_ZONE > rotation:
+        motorOne = constants.turret.TURRET_SLOW_ROTATE_SPEED
+    elif analogOne - constants.turret.TURRET_DEAD_ZONE < rotation:
+        motorOne = -constants.turret.TURRET_SLOW_ROTATE_SPEED
+    else:
+        motorOne = 0
+
+

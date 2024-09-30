@@ -24,3 +24,8 @@
 # eightU = 0
 # eightL = 0
 # End Standard Declaration
+
+import subsystems.turret
+
+def rotateTurret(axisThree, motorOne, analogOne):
+    subsystems.turret.setTurretMotor(analogOne, motorOne, axisThree)

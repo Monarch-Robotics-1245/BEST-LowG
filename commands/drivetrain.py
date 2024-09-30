@@ -28,22 +28,21 @@
 # End Standard Declaration
 
 import subsystems.drivetrain
+import constants.drivetrain
 
-def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previousEightR, previousEightL, SLOW_SPEED, FAST_SPEED):
+def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previousEightR, previousEightL):
     """
-    Takes in the joystick values and sets the motors to the correct values
-
-    :param FAST_SPEED: double - fast speed multiplier for the robot
-    :param SLOW_SPEED: double - slow speed multiplier for the robot
-    :param direction: int - 1 is backwards, 0 is forwards
-    :param speedMultiplier: int - current speed multiplier for the robot
-    :param axisOne: int - Joystick Axis 1
-    :param axisTwo: int - Joystick Axis 2
-    :param eightR: int - Joystick Button 8 Right
-    :param eightL: int - Joystick Button 8 Left
-    :param previousEightR: int - Joystick Button 8 Right Previous
-    :param previousEightL: int - Joystick Button 8 Left Previous
-    :return: 
+    
+    Takes in the joystick values and sets the motors to the correct values.
+    
+    direction (int): 1 is backwards, 0 is forwards
+    speedMultiplier (int): current speed multiplier for the robot
+    axisOne (int): Joystick Axis 1
+    axisTwo (int): Joystick Axis 2
+    eightR (int): Joystick Button 8 Right
+    eightL (int): Joystick Button 8 Left
+    previousEightR (int): Joystick Button 8 Right Previous
+    previousEightL (int): Joystick Button 8 Left Previous
     """
     
     left = axisOne + axisTwo
@@ -58,10 +57,10 @@ def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previous
 
 
     if previousEightL == 1 and eightL == 0:
-        if speedMultiplier == FAST_SPEED:
-            speedMultiplier = SLOW_SPEED
+        if speedMultiplier == constants.drivetrain.FAST_SPEED:
+            speedMultiplier = constants.drivetrain.SLOW_SPEED
         else:
-            speedMultiplier = FAST_SPEED
+            speedMultiplier = constants.drivetrain.FAST_SPEED
     
     left = left * speedMultiplier
     right = right * speedMultiplier
