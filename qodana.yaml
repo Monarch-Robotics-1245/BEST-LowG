@@ -27,6 +27,7 @@ exclude:
       - tests/*
   - name: PyPep8NamingInspection
   - name: PyUnusedLocalInspection
+  
 
 include:
   - name: Include only project directories
@@ -146,7 +147,6 @@ include:
   - name: RegExpEscapedMetaCharacter
   - name: RegExpAnonymousGroup
   - name: QodanaSanity
-  - name: PyUnusedLocalInspection
   - name: PyUnresolvedReferencesInspection
   - name: PyArgumentEqualDefaultInspection
   - name: PyMandatoryEncodingInspection
