@@ -1,6 +1,6 @@
 qodana:
   image:
-    name: jetbrains/qodana-python-community
+    name: jetbrains/qodana-python:2024.1
     entrypoint: [""]
   cache:
     - key: qodana-2024.1-$CI_DEFAULT_BRANCH-$CI_COMMIT_REF_SLUG
@@ -10,7 +10,8 @@ qodana:
       paths:
         - .qodana/cache
   variables:
-    QODANA_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0IjoiQURXdmoiLCJvcmdhbml6YXRpb24iOiJBUlowTCIsInRva2VuIjoiQU43VmIifQ.cG0PJkTyYd4zQMZZ1JP0xyg1gQV6RDuKICSW0wYQ6LE
+    QODANA_TOKEN: $QODANA_TOKEN
+    QODANA_ENDPOINT: "https://qodana.cloud"
   script:
     - rm -rf .qodana/cache  # Clear previous Qodana cache to avoid stale issues
     - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
