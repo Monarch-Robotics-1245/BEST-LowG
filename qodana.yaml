@@ -235,7 +235,6 @@ include:
   - name: LongLine
   - name: InjectedReferences
   - name: IncorrectFormatting
-  - name: InconsistentLineSeparators
   - name: EmptyDirectory
   - name: DuplicatedCode
   - name: Annotator
