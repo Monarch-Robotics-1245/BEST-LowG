@@ -7,7 +7,7 @@ bootstrap: |
 exclude:
   - name: Exclude docs folder
     paths:
-      - documentation/*
+      - documentation/**
       
   - name: Exclude system files
     paths:
@@ -31,8 +31,9 @@ exclude:
 include:
   - name: Include only project directories
     paths:
-      - Subsystems/*
-      - Autos/*
+      - Subsystems/**
+      - Autos/**
+      - Commands/**
       - main.py
 
   - name: JsCoverageInspection
