@@ -5,6 +5,10 @@ bootstrap: |
   python3 --version
 
 exclude:
+  - name: Exclude docs folder
+    paths:
+      - documentation/*
+      
   - name: Exclude system files
     paths:
       - /usr/bin/pip*
