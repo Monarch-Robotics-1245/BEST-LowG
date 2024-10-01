@@ -25,7 +25,7 @@
 # eightL = 0
 # End Standard Declaration
 
-import subsytems.wrist
+import subsystems.wrist
 
 def moveWrist (fiveD, fiveU, servoTwo):
     

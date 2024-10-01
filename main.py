@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import autos
-import subsystems
 import commands
 
 
