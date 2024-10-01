@@ -14,7 +14,7 @@ qodana:
     QODANA_ENDPOINT: "https://qodana.cloud"
   script:
     - rm -rf .qodana/cache  # Clear previous Qodana cache to avoid stale issues
-    - qodana --baseline .qodana/qodana.sarif.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
+    - qodana --baseline .qodana/qodana.json --cache-dir=$CI_PROJECT_DIR/.qodana/cache
   rules:
     - if: '$CI_PROJECT_PATH == "monarch-robotics/best-lowg/best-lowg"'
       when: always
