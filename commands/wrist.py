@@ -25,10 +25,15 @@
 # eightL = 0
 # End Standard Declaration
 
-def moveWrist (fiveD, fiveU)
-    if fiveU == 1 & fiveD == 1:
+import subsytems.wrist
+
+def moveWrist (fiveD, fiveU, servoTwo):
+    
+    if fiveU == 1 and fiveD == 1:
         pass
+
     elif fiveU == 1:
-        subsystems.wrist.wristUp
+        subsystems.wrist.wristUp(servoTwo)
+
     elif fiveD == 1:
-        subsystems.wrist.wristDown
+        subsystems.wrist.wristDown(servoTwo)

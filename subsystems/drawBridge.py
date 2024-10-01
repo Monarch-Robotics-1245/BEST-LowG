@@ -33,5 +33,5 @@ def openDrawBridge(servoThree):
 def closeDrawBridge(servoThree):
     servoThree = constants.drawBridge.DRAWBRIDGE_CLOSE
 
-def setDrawBridge(servoThree, value)
+def setDrawBridge(servoThree, value):
     servoThree = value

@@ -33,5 +33,5 @@ def openGripper(servoOne):
 def closeGripper(servoOne):
     servoOne = constants.gripper.GRIPPER_CLOSE
 
-def setGripper(servoOne, value)
+def setGripper(servoOne, value):
     servoOne = value

@@ -26,7 +26,7 @@
 # End Standard Declaration
 
 import subsystems.drawBridge
-import commands.drawBridge
+import constants.drawBridge
 
-def autoDrawBridge():
+def autoDrawBridge(servoThree):
     subsystems.drawBridge.setDrawBridge(servoThree, constants.drawBridge.AUTO_POSITION)

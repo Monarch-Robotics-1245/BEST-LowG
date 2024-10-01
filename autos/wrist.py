@@ -26,7 +26,7 @@
 # End Standard Declaration
 
 import subsystems.wrist 
-import commands.wrist
+import constants.wrist
 
-def autoWrist ():
-    subsystems.wrist.setWrist (servoTwo, constants.wrist.AUTO_POSITION)
+def autoWrist(servoTwo):
+    subsystems.wrist.setWrist(servoTwo, constants.wrist.AUTO_POSITION)
