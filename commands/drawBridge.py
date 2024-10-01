@@ -27,7 +27,7 @@
 
 import subsystems.drawBridge
 
-def gripper(servoThree, sevenU, sevenL, previousSevenU, previousSevenL):
+def runDrawBridge(servoThree, sevenU, sevenL, previousSevenU, previousSevenL):
 
     if sevenU == 1 and previousSevenU == 0:
 
