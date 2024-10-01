@@ -28,5 +28,6 @@
 import subsystems.wrist 
 import constants.wrist
 
+
 def autoWrist(servoTwo):
     subsystems.wrist.setWrist(servoTwo, constants.wrist.AUTO_POSITION)

@@ -28,6 +28,7 @@
 
 import constants.turret
 
+
 def setTurretMotor(analogOne, motorOne, value):
     if analogOne > constants.turret.TURRET_UPPER_LIMIT:
         if 0 > value:
@@ -41,6 +42,7 @@ def setTurretMotor(analogOne, motorOne, value):
             motorOne = 0
     else:
         motorOne = value
+
 
 def setTurretRotation(analogOne, motorOne, rotation):
     rotation *= constants.turret.TURRET_ANGLE_CONVERSION

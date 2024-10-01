@@ -27,11 +27,14 @@
 
 import constants.drawBridge
 
+
 def openDrawBridge(servoThree):
     servoThree = constants.drawBridge.DRAWBRIDGE_OPEN
 
+
 def closeDrawBridge(servoThree):
     servoThree = constants.drawBridge.DRAWBRIDGE_CLOSE
+
 
 def setDrawBridge(servoThree, value):
     servoThree = value

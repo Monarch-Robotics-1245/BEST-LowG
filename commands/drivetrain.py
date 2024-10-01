@@ -30,6 +30,7 @@
 import subsystems.drivetrain
 import constants.drivetrain
 
+
 def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previousEightR, previousEightL):
     """
     
@@ -54,7 +55,6 @@ def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previous
             direction = 1
         else:
             direction = 0
-
 
     if previousEightL == 1 and eightL == 0:
         if speedMultiplier == constants.drivetrain.FAST_SPEED:

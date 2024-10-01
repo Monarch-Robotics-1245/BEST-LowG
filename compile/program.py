@@ -1,4 +1,7 @@
-def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR, eightD, eightU, eightL, analogOne, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, lastPosition, lastPositionSet, previousSevenU, previousSevenL, previousEightR, previousEightL, leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, direction, speedMultiplier):
+def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, sevenU, sevenL, sevenR, sevenD, eightR,
+          eightD, eightU, eightL, analogOne, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive,
+          lastPosition, lastPositionSet, previousSevenU, previousSevenL, previousEightR, previousEightL, leftMotor,
+          rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, direction, speedMultiplier):
     left = axisOne + axisTwo
     right = axisOne - axisTwo
     if previousEightR == 1 and eightR == 0:
@@ -75,4 +78,5 @@ def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, seven
         servoTwo += 10
     elif fiveD == 1:
         servoTwo -= 10
-    return leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, direction, speedMultiplier, lastPosition, lastPositionSet
+    return (leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, direction,
+            speedMultiplier, lastPosition, lastPositionSet)

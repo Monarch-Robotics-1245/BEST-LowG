@@ -28,5 +28,6 @@
 import subsystems.drawBridge
 import constants.drawBridge
 
+
 def autoDrawBridge(servoThree):
     subsystems.drawBridge.setDrawBridge(servoThree, constants.drawBridge.AUTO_POSITION)

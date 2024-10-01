@@ -27,6 +27,7 @@
 
 import subsystems.gripper
 
+
 def gripper(servoOne, sevenU, sevenL, previousSevenU, previousSevenL):
     if sevenU == 1 & previousSevenU == 0:
         subsystems.gripper.openGripper(servoOne)
