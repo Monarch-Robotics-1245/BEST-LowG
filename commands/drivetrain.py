@@ -45,10 +45,8 @@ def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previous
     previousEightR (int): Joystick Button 8 Right Previous
     previousEightL (int): Joystick Button 8 Left Previous
     """
-    
     left = axisOne + axisTwo
     right = axisOne - axisTwo
-    
     # 1 is backwards, 0 is forwards
     if previousEightR == 1 and eightR == 0:
         if direction == 0:
@@ -61,14 +59,11 @@ def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previous
             speedMultiplier = constants.drivetrain.SLOW_SPEED
         else:
             speedMultiplier = constants.drivetrain.FAST_SPEED
-    
     left = left * speedMultiplier
     right = right * speedMultiplier
-    
     if direction == 1:
         left = -left
         right = -right
-    
     subsystems.drivetrain.setLeftMotor(left)
     subsystems.drivetrain.setRightMotor(right)
     

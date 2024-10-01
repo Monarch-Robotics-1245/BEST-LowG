@@ -29,12 +29,13 @@ import subsystems.wrist
 
 
 def moveWrist(fiveD, fiveU, servoTwo):
-    
     if fiveU == 1 and fiveD == 1:
         pass
 
+
     elif fiveU == 1:
         subsystems.wrist.wristUp(servoTwo)
+
 
     elif fiveD == 1:
         subsystems.wrist.wristDown(servoTwo)

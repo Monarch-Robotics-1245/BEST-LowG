@@ -1,7 +1,7 @@
 qodana:
   image:
     name: jetbrains/qodana-python:2024.1
-    entrypoint: [""]
+    entrypoint: [ "" ]
   cache:
     - key: qodana-2024.1-$CI_DEFAULT_BRANCH-$CI_COMMIT_REF_SLUG
       fallback_keys:

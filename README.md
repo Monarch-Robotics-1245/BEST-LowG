@@ -1,4 +1,6 @@
-![qodana](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/badges/main/pipeline.svg) ![release](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/-/badges/release.svg)
+![qodana](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/badges/main/pipeline.svg) 
+![release](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/-/badges/release.svg)
+
 # BEST LowG
 ## **Description**
 Monarch Robotics code for the 2024 BEST LowG Season
@@ -7,16 +9,27 @@ Monarch Robotics code for the 2024 BEST LowG Season
 The main file that runs the robot code. This file should be run on the robot.
 Commands and autos can be run from this file.
 ### `commands/`
-This directory contains all the commands that the robot can run. Commands are reusable pieces of code that can be run from the main file. Commands are used for manual actions done by the driver.
+This directory contains all the commands that the robot can run. 
+Commands are reusable pieces of code that can be run from the main file. 
+Commands are used for manual actions done by the driver.
 ### `autos/`
-This directory contains all the autonomous routines that the robot can run. Autos are reusable pieces of code that can be run from the main file. Autos are used for autonomous actions done by the robot. Autos are also used for driver assistance during the teleop period.
+This directory contains all the autonomous routines that the robot can run. 
+Autos are reusable pieces of code that can be run from the main file. 
+Autos are used for autonomous actions done by the robot. 
+Autos are also used for driver assistance during the teleop period.
 ### `subsystems/`
-This directory contains all the subsystems that the robot uses. Subsystems are reusable pieces of code that can be run from the main file. Subsystems are used for controlling the robot's hardware.
+This directory contains all the subsystems that the robot uses. 
+Subsystems are reusable pieces of code that can be run from the main file. 
+Subsystems are used for controlling the robot's hardware.
 ## **EyeSight**
-EyeSight is the driver assistance technology system that the robot runs. it is toggleable by the driver and only runs when the onboard enable switch is inserted. EyeSight is used to assist the driver in the teleop period. EyeSight is not used in the autonomous period. EyeSight files are called by `main.py` and are located in the `autos/` directory.
+EyeSight is the driver assistance technology system that the robot runs. 
+It is toggleable by the driver and only runs when the onboard enable switch is inserted. 
+EyeSight is used to assist the driver in the teleop period. EyeSight is not used in the autonomous period. 
+EyeSight files are called by `main.py` and are located in the `autos/` directory.
 ## **Python Comment Syntax**
 ### Block Comment
-A block comment explains a section of code and spans multiple lines. Each line starts with a `#` followed by a space. These comments describe *how* or *why* the code works, and should be used for larger code explanations.
+A block comment explains a section of code and spans multiple lines. Each line starts with a `#` followed by a space. 
+These comments describe *how* or *why* the code works, and should be used for larger code explanations.
 
 ```python
 # This is a block comment explaining the following code.
@@ -27,7 +40,8 @@ for i in range(10):
 ```
 > We mainly use block comments
 ### Docstring
-A docstring is a string literal used to document modules, classes, and functions. It describes *what* the code does. Docstrings are enclosed in triple quotes (`"""`) and placed inside the function, class, or module definition.
+A docstring is a string literal used to document modules, classes, and functions. It describes *what* the code does. 
+Docstrings are enclosed in triple quotes (`"""`) and placed inside the function, class, or module definition.
 
 ```python
 def add(a, b):
@@ -94,7 +108,8 @@ Axis 4 (Left Vertical):
 ## **Code Formatting**
 Please try to follow the PEP 8 Style Guide. 
 
-Please insert this code snippet at the top of all files to initialize the function variables. This may be changed over the season****:
+Please insert this code snippet at the top of all files to initialize the function variables. 
+This may be changed over the season:
 ```python
 # Standard Declaration
 # leftMotor = 0
