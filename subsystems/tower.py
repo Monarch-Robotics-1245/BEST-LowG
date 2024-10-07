@@ -28,8 +28,7 @@
 import constants.tower
 
 
-def setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, value, lastPosition,
-                  lastPositionSet):
+def setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, value, lastPosition, lastPositionSet):
     if digitalOne == 1:
         lastPosition = 0
         lastPositionSet = 1
@@ -63,8 +62,7 @@ def setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive
         motorTwo = value
 
 
-def setTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, position, lastPosition,
-                     lastPositionSet):
+def setTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, position, lastPosition, lastPositionSet):
     if digitalOne == 1:
         lastPosition = 0
         lastPositionSet = 1

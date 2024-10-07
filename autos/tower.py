@@ -29,7 +29,5 @@ import constants.tower
 import subsystems.tower
 
 
-def autoTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, lastPosition,
-                      lastPositionSet):
-    subsystems.tower.setTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo,
-                                      constants.tower.TOWER_AUTO_POSITION, lastPosition, lastPositionSet)
+def autoTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, lastPosition, lastPositionSet):
+    subsystems.tower.setTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, constants.tower.TOWER_AUTO_POSITION, lastPosition, lastPositionSet)
