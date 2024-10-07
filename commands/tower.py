@@ -1,3 +1,6 @@
+"""
+This is a move tower file.
+"""
 # Standard Declaration
 # leftMotor = 0
 # rightMotor = 0
@@ -30,5 +33,16 @@ import subsystems.tower
 
 def moveTower(motorTwo, axisFour, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, lastPosition,
               lastPositionSet):
+    """
+    Takes in joystick values and sets the parameters for the subsystem file's function.
+
+    digitalOne (int): Takes in limit switch values
+    digitalTwo (int): Takes in limit switch values
+    digitalThree (int): Takes in IR sensor values
+    digitalFour (int): Takes in IR sensor values
+    digitalFive (int): Takes in IR sensor values
+    lastPosition (int): 
+    lastPositionSet (int): 
+    """
     subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, axisFour,
                                    lastPosition, lastPositionSet)

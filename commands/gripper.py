@@ -29,7 +29,21 @@ import subsystems.gripper
 
 
 def gripper(servoOne, sevenU, sevenL, previousSevenU, previousSevenL):
+    
+    """
+    Takes in the joystick values and sets the gripper servo to those values
+
+    servoOne (int): Takes in values 127 and -127 for setting gripper to close and open positions.
+    sevenU (int): Joystick Button 7 up
+    sevenL (int): Joystick Button 7 left
+    previousSevenU (int): Joystick Button 7 up previous
+    previousSevenL (int): Joystick Button 7 left previous
+    """
+
     if sevenU == 1 & previousSevenU == 0:
+
         subsystems.gripper.openGripper(servoOne)
+
     elif sevenL == 1 & previousSevenL == 0:
+
         subsystems.gripper.closeGripper(servoOne)

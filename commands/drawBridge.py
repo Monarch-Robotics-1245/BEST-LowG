@@ -28,12 +28,24 @@
 import subsystems.drawBridge
 
 
-def runDrawBridge(servoThree, sevenU, sevenL, previousSevenU, previousSevenL):
+def runDrawBridge(servoThree, sixU, sixD, previousSixU, previousSixD):
 
-    if sevenU == 1 and previousSevenU == 0:
+    """
+    Takes in the joystick values and sets the DrawBridge servo to those values.
+
+    servoThree (int): Takes in values 127 and -127 for up and down
+    sixU (int): Joystick Button 6 Up
+    sixD (int): Joystick Button 6 Down
+    previousSixU (int): Joystick Button 6 up previous
+    previousSixD (int): Joystick Button 6 down previous
+    """
+
+    #1 is True (pressed) and O is false (not pressed)
+    
+    if sixU == 1 and previousSixU == 0:
 
         subsystems.drawBridge.openDrawBridge(servoThree)
 
-    elif sevenL == 1 and previousSevenL == 0:
+    elif sixD == 1 and previousSixD == 0:
 
         subsystems.drawBridge.closeDrawBridge(servoThree)
