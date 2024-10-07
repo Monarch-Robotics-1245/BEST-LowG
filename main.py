@@ -56,4 +56,4 @@ def robot(axisOne, axisTwo, axisThree, axisFour, fiveU, fiveD, sixU, sixD, seven
     commands.turret.rotateTurret(axisThree, motorOne, analogOne)
     commands.wrist.moveWrist(fiveD, fiveU, servoTwo)
 
-    return (leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, direction, speedMultiplier, lastPosition, lastPositionSet)
+    return leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, direction, speedMultiplier, lastPosition, lastPositionSet
