@@ -25,7 +25,7 @@
 # eightL = 0
 # End Standard Declaration
 
-import subsystems.wrist 
+import subsystems.wrist
 import constants.wrist
 
 

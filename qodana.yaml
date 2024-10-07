@@ -232,7 +232,6 @@ include:
   - name: RedundantSuppression
   - name: ReassignedToPlainText
   - name: ProblematicWhitespace
-  - name: LongLine
   - name: InjectedReferences
   - name: IncorrectFormatting
   - name: EmptyDirectory
