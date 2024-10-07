@@ -30,9 +30,7 @@ import subsystems.drawBridge
 
 def runDrawBridge(servoThree, sevenU, sevenL, previousSevenU, previousSevenL):
     if sevenU == 1 and previousSevenU == 0:
-
         subsystems.drawBridge.openDrawBridge(servoThree)
 
     elif sevenL == 1 and previousSevenL == 0:
-
         subsystems.drawBridge.closeDrawBridge(servoThree)
