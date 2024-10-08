@@ -1,5 +1,5 @@
 """
-This is a move tower file.
+This is the tower command.
 """
 # Standard Declaration
 # leftMotor = 0
@@ -41,8 +41,8 @@ def moveTower(motorTwo, axisFour, digitalOne, digitalTwo, digitalThree, digitalF
     digitalThree (int): Takes in IR sensor values
     digitalFour (int): Takes in IR sensor values
     digitalFive (int): Takes in IR sensor values
-    lastPosition (int): 
-    lastPositionSet (int): 
+    lastPosition (int): Takes in last position the tower was at
+    lastPositionSet (int): Updates last position the tower was at
     """
     subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, axisFour,
                                    lastPosition, lastPositionSet)
