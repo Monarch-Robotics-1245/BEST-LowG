@@ -28,5 +28,5 @@
 import subsystems.tower
 
 
-def moveTower(motorTwo, axisFour, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, lastPosition, lastPositionSet):
-    subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, axisFour, lastPosition, lastPositionSet)
+def moveTower(towerAxis, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, lastPosition, lastPositionSet):
+    subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, towerAxis, lastPosition, lastPositionSet)

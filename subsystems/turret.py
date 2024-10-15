@@ -29,7 +29,7 @@
 import constants.turret
 
 
-def setTurretMotor(analogOne, motorOne, value):
+def setTurretMotor(analogOne, value):
     if analogOne > constants.turret.TURRET_UPPER_LIMIT:
         if 0 > value:
             motorOne = value
@@ -44,7 +44,7 @@ def setTurretMotor(analogOne, motorOne, value):
         motorOne = value
 
 
-def setTurretRotation(analogOne, motorOne, rotation):
+def setTurretRotation(analogOne, rotation):
     rotation *= constants.turret.TURRET_ANGLE_CONVERSION
     if analogOne + constants.turret.TURRET_SLOW_ZONE > rotation:
         motorOne = constants.turret.TURRET_FAST_ROTATE_SPEED

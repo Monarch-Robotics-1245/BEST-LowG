@@ -28,8 +28,8 @@
 import subsystems.gripper
 
 
-def gripper(servoOne, sevenU, sevenL, previousSevenU, previousSevenL):
-    if sevenU == 1 & previousSevenU == 0:
-        subsystems.gripper.openGripper(servoOne)
-    elif sevenL == 1 & previousSevenL == 0:
-        subsystems.gripper.closeGripper(servoOne)
+def gripper(grip, release, previousGrip, previousRelease):
+    if release == 1 and previousRelease == 0:
+        subsystems.gripper.openGripper()
+    elif grip == 1 and previousGrip == 0:
+        subsystems.gripper.closeGripper()

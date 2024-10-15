@@ -28,13 +28,14 @@
 import constants.wrist
 
 
-def wristUp(servoTwo):
+
+def wristUp():
     servoTwo += constants.wrist.ROTATE_INCREMENT
 
 
-def wristDown(servoTwo):
+def wristDown():
     servoTwo -= constants.wrist.ROTATE_INCREMENT
 
 
-def setWrist(servoTwo, value):
+def setWrist(value):
     servoTwo = value

@@ -28,5 +28,5 @@
 import subsystems.turret
 
 
-def rotateTurret(axisThree, motorOne, analogOne):
-    subsystems.turret.setTurretMotor(analogOne, motorOne, axisThree)
+def rotateTurret(turretAxis, analogOne):
+    subsystems.turret.setTurretMotor(analogOne, turretAxis)
