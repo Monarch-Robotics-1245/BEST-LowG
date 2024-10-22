@@ -1,3 +1,6 @@
+"""
+This is the tower command.
+"""
 # Standard Declaration
 # leftMotor = 0
 # rightMotor = 0
@@ -29,4 +32,15 @@ import subsystems.tower
 
 
 def moveTower(towerAxis, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, lastPosition, lastPositionSet):
+    """
+    lastPositionSet (int): Updates last position the tower was at
+    lastPosition (int): Takes in last position the tower was at
+    digitalFive (int): Takes in IR sensor values
+    digitalFour (int): Takes in IR sensor values
+    digitalThree (int): Takes in IR sensor values
+    digitalTwo (int): Takes in limit switch values
+
+    digitalOne (int): Takes in limit switch values
+    Takes in joystick values and sets the parameters for the subsystem file's function.
+    """
     subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, towerAxis, lastPosition, lastPositionSet)

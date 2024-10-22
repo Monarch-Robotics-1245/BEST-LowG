@@ -29,6 +29,14 @@ import subsystems.drawBridge
 
 
 def runDrawBridge(dbgUp, dbgDown, previousDbgUp, previousDbgDown):
+    """
+    Takes in the joystick values and sets the DrawBridge servo to those values.
+
+    dbgUp (int): Drawbridge Button Up
+    dbgDown (int): Drawbridge Button Down
+    previousDbgUp (int): Drawbridge Button up previous
+    previousDbgDown (int): Drawbridge Button down previous
+    """
     if dbgUp == 1 and previousDbgUp == 0:
         subsystems.drawBridge.openDrawBridge()
 
