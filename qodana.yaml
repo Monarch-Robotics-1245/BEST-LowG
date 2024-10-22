@@ -29,8 +29,10 @@ exclude:
   - name: PyPep8NamingInspection
   - name: PyUnusedLocalInspection
   - name: PyRedundantParenthesesInspection
+
+  - name: Exclude programFINAL.py
     paths:
-      - programFINAL.py
+      - '**/programFINAL.py'
 
 include:
   - name: Include only project directories

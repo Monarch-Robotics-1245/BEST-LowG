@@ -6,8 +6,7 @@
 ![Last Release Date](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=last-release-date&cacheSeconds=10)
 ![Last Commit Date](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=last-commit&cacheSeconds=10)
 ![Pull Requests](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=pull-requests&cacheSeconds=10)
-![Qodana](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=qodana&cacheSeconds=10)
-
+[![Qodana](https://github.com/Monarch-Robotics-1245/BEST-LowG/actions/workflows/qodana_code_quality.yml/badge.svg)](https://github.com/Monarch-Robotics-1245/BEST-LowG/actions/workflows/qodana_code_quality.yml)
 # BEST LowG
 ## **Description**
 Monarch Robotics code for the 2024 BEST LowG Season
