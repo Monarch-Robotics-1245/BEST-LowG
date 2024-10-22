@@ -1,3 +1,6 @@
+"""
+This is the turret command
+"""
 # Standard Declaration
 # leftMotor = 0
 # rightMotor = 0
@@ -29,4 +32,9 @@ import subsystems.turret
 
 
 def rotateTurret(turretAxis, analogOne):
+    """
+    analogOne (int):
+
+    Moves turret based on joystick imputs
+    """
     subsystems.turret.setTurretMotor(analogOne, turretAxis)
