@@ -27,6 +27,7 @@ exclude:
       - tests/*
   - name: PyPep8NamingInspection
   - name: PyUnusedLocalInspection
+  - name: PyRedundantParenthesesInspection
 
 include:
   - name: Include only project directories
@@ -232,7 +233,6 @@ include:
   - name: RedundantSuppression
   - name: ReassignedToPlainText
   - name: ProblematicWhitespace
-  - name: LongLine
   - name: InjectedReferences
   - name: IncorrectFormatting
   - name: EmptyDirectory

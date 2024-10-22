@@ -31,7 +31,7 @@ import subsystems.drivetrain
 import constants.drivetrain
 
 
-def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previousEightR, previousEightL):
+def drive(driveFwd, driveSide, reverseButton, previousReverseButton, direction, speedMultiplier, speedButton, previousSpeedButton):
     """
     
     Takes in the joystick values and sets the motors to the correct values.
@@ -45,16 +45,16 @@ def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previous
     previousEightR (int): Joystick Button 8 Right Previous
     previousEightL (int): Joystick Button 8 Left Previous
     """
-    left = axisOne + axisTwo
-    right = axisOne - axisTwo
-    # 1 is backwards, 0 is forwards
-    if previousEightR == 1 and eightR == 0:
+    left = driveFwd + driveSide
+    right = driveFwd - driveSide
+
+    if previousReverseButton == 1 and reverseButton == 0:
         if direction == 0:
             direction = 1
         else:
             direction = 0
 
-    if previousEightL == 1 and eightL == 0:
+    if previousSpeedButton == 1 and speedButton == 0:
         if speedMultiplier == constants.drivetrain.FAST_SPEED:
             speedMultiplier = constants.drivetrain.SLOW_SPEED
         else:
@@ -64,6 +64,8 @@ def drive(direction, speedMultiplier, axisOne, axisTwo, eightR, eightL, previous
     if direction == 1:
         left = -left
         right = -right
+
+    # 1 is backwards, 0 is forwards
     subsystems.drivetrain.setLeftMotor(left)
     subsystems.drivetrain.setRightMotor(right)
     

@@ -31,10 +31,10 @@ This is the turret command
 import subsystems.turret
 
 
-def rotateTurret(axisThree, motorOne, analogOne):
+def rotateTurret(turretAxis, analogOne):
+    subsystems.turret.setTurretMotor(analogOne, turretAxis)
     """
-    Moves turret based on joystick imputs
-
     analogOne (int): 
+
+    Moves turret based on joystick imputs
     """
-    subsystems.turret.setTurretMotor(analogOne, motorOne, axisThree)

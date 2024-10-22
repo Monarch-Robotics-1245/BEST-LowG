@@ -28,13 +28,13 @@
 import constants.gripper
 
 
-def openGripper(servoOne):
+def openGripper():
     servoOne = constants.gripper.GRIPPER_OPEN
 
 
-def closeGripper(servoOne):
+def closeGripper():
     servoOne = constants.gripper.GRIPPER_CLOSE
 
 
-def setGripper(servoOne, value):
+def setGripper(value):
     servoOne = value

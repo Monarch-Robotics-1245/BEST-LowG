@@ -61,16 +61,16 @@ def add(a, b):
 ## **Ports and Inputs**
 ### Motors
 ```text
-Port 1:  
-Port 2:  
-Port 3:  
-Port 4:  
-Port 5:  
-Port 6:  
-Port 7:  
-Port 8:  
-Port 9:  
-Port 10: 
+Port 1:  N/P
+Port 2:  Left
+Port 3:  Right
+Port 4:  Tower
+Port 5:  Turret
+Port 6:  Gripper
+Port 7:  Wrist
+Port 8:  DBG1
+Port 9:  DBG2
+Port 10: N/P
 ```
 > Motors should be set to a double from a range of -127 to 127 where 127 is 100% and -127 is -100%
 ### Digital Inputs

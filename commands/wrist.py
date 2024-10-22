@@ -28,10 +28,8 @@
 import subsystems.wrist
 
 
-def moveWrist(fiveD, fiveU, servoTwo):
-    if fiveU == 1 and fiveD == 1:
-        pass
-    elif fiveU == 1:
-        subsystems.wrist.wristUp(servoTwo)
-    elif fiveD == 1:
-        subsystems.wrist.wristDown(servoTwo)
+def moveWrist(wristDown, wristUp, previousWristDown, previousWristUp):
+    if wristUp == 1 and previousWristUp == 1:
+        subsystems.wrist.wristUp()
+    elif wristDown == 1 and previousWristDown == 1:
+        subsystems.wrist.wristDown()
