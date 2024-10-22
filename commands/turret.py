@@ -32,9 +32,9 @@ import subsystems.turret
 
 
 def rotateTurret(turretAxis, analogOne):
-    subsystems.turret.setTurretMotor(analogOne, turretAxis)
     """
-    analogOne (int): 
+    analogOne (int):
 
     Moves turret based on joystick imputs
     """
+    subsystems.turret.setTurretMotor(analogOne, turretAxis)

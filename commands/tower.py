@@ -31,7 +31,6 @@ This is the tower command.
 import subsystems.tower
 
 
-    subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, towerAxis, lastPosition, lastPositionSet)
 def moveTower(towerAxis, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, lastPosition, lastPositionSet):
     """
     lastPositionSet (int): Updates last position the tower was at
@@ -44,3 +43,4 @@ def moveTower(towerAxis, digitalOne, digitalTwo, digitalThree, digitalFour, digi
     digitalOne (int): Takes in limit switch values
     Takes in joystick values and sets the parameters for the subsystem file's function.
     """
+    subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, towerAxis, lastPosition, lastPositionSet)
