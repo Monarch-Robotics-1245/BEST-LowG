@@ -1,5 +1,4 @@
-![qodana](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/badges/main/pipeline.svg) 
-![release](https://gitlab.com/monarch-robotics/best-lowg/best-lowg/-/badges/release.svg)
+![GitHub Release](https://img.shields.io/github/v/release/Monarch-Robotics-1245/BEST-LowG)
 
 # BEST LowG
 ## **Description**
