@@ -1,4 +1,4 @@
-![Stars](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData)
+![Stars](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData&cacheSeconds=10)
 
 # BEST LowG
 ## **Description**
