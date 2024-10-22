@@ -29,8 +29,7 @@ exclude:
   - name: PyPep8NamingInspection
   - name: PyUnusedLocalInspection
   - name: PyRedundantParenthesesInspection
-  - name: Exclude build files
-    paths:
+  - paths:
       - programFINAL.py
 
 include:
