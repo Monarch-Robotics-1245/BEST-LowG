@@ -1,11 +1,4 @@
-![Build Status](https://github.com/Monarch-Robotics-1245/BEST-LowG/actions/workflows/qodana_code_quality.yml/badge.svg)
-![License](https://img.shields.io/github/license/Monarch-Robotics-1245/BEST-LowG)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Monarch-Robotics-1245/BEST-LowG)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/Monarch-Robotics-1245/BEST-LowG)
-![GitHub contributors](https://img.shields.io/github/contributors/Monarch-Robotics-1245/BEST-LowG)
-![GitHub forks](https://img.shields.io/github/forks/Monarch-Robotics-1245/BEST-LowG?style=social)
-![GitHub Repo stars](https://img.shields.io/github/stars/Monarch-Robotics-1245/BEST-LowG?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/Monarch-Robotics-1245/BEST-LowG?style=social)
+![Stars](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData)
 
 # BEST LowG
 ## **Description**
