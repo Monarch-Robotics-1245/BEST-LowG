@@ -1,5 +1,8 @@
 version: "1.0"
-linter: jetbrains/qodana-python:2024.1
+linter:
+  - name: jetbrains/qodana-python:2024.1
+    python_version: "3.9"
+
 profile:
   name: qodana.recommended
 bootstrap: |
