@@ -25,9 +25,16 @@
 # eightL = 0
 # End Standard Declaration
 
-import subsystems.turret
-import constants.turret
+import src.constants.gripper
 
 
-def autoTurret(motorOne, analogOne):
-    subsystems.turret.setTurretRotation(analogOne, motorOne, constants.turret.TURRET_AUTO_POSITION)
+def openGripper():
+    servoOne = src.constants.gripper.GRIPPER_OPEN
+
+
+def closeGripper():
+    servoOne = src.constants.gripper.GRIPPER_CLOSE
+
+
+def setGripper(value):
+    servoOne = value

@@ -1,0 +1,53 @@
+name: Run Tests
+
+on: [push, pull_request]
+
+jobs:
+  sanity_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'  # Adjust this version as necessary
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Run sanity tests
+        run: |
+          # Run each test individually
+          for test_name in test_is_true test_equals test_not_equals test_is_not_true test_greater_than test_greater_than_or_equal_to test_not_one test_less_than test_positive_check test_is_even test_is_odd test_is_not_negative test_is_zero test_absolute_value test_is_non_zero test_sum test_difference test_division test_factorial test_string_equality
+          do
+            echo "Running $test_name"
+            .venv/bin/pytest resources/tests/return_tests.py::"$test_name" -s
+          done
+
+  remaining_tests:
+    runs-on: ubuntu-latest
+    needs: sanity_tests  # This ensures that this job runs after the sanity tests
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'  # Adjust this version as necessary
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Run remaining tests
+        run: |
+          # Run the remaining test individually
+          .venv/bin/pytest resources/tests/return_remaining_tests.py::test_remaining_return -s

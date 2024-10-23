@@ -25,7 +25,7 @@
 # eightL = 0
 # End Standard Declaration
 
-import constants.tower
+import src.constants.tower
 
 
 def setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, value, lastPosition, lastPositionSet):
@@ -87,41 +87,41 @@ def setTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalF
             motorTwo = 0
             targetPosition = 0
         elif lastPosition > 0:
-            motorTwo = -constants.tower.TOWER_SPEED
+            motorTwo = -src.constants.tower.TOWER_SPEED
         elif lastPosition < 0:
-            motorTwo = constants.tower.TOWER_SPEED
+            motorTwo = src.constants.tower.TOWER_SPEED
     if position == 2:
         if digitalThree == 1:
             motorTwo = 0
             targetPosition = 0
         elif lastPosition > 1:
-            motorTwo = -constants.tower.TOWER_SPEED
+            motorTwo = -src.constants.tower.TOWER_SPEED
         elif lastPosition < 1:
-            motorTwo = constants.tower.TOWER_SPEED
+            motorTwo = src.constants.tower.TOWER_SPEED
     if position == 3:
         if digitalFour == 1:
             motorTwo = 0
             targetPosition = 0
         elif lastPosition > 2:
-            motorTwo = -constants.tower.TOWER_SPEED
+            motorTwo = -src.constants.tower.TOWER_SPEED
         elif lastPosition < 2:
-            motorTwo = constants.tower.TOWER_SPEED
+            motorTwo = src.constants.tower.TOWER_SPEED
     if position == 4:
         if digitalFive == 1:
             motorTwo = 0
             targetPosition = 0
         elif lastPosition > 3:
-            motorTwo = -constants.tower.TOWER_SPEED
+            motorTwo = -src.constants.tower.TOWER_SPEED
         elif lastPosition < 3:
-            motorTwo = constants.tower.TOWER_SPEED
+            motorTwo = src.constants.tower.TOWER_SPEED
     if position == 5:
         if digitalTwo == 1:
             motorTwo = 0
             targetPosition = 0
         elif lastPosition > 4:
-            motorTwo = -constants.tower.TOWER_SPEED
+            motorTwo = -src.constants.tower.TOWER_SPEED
         elif lastPosition < 4:
-            motorTwo = constants.tower.TOWER_SPEED
+            motorTwo = src.constants.tower.TOWER_SPEED
         else:
-            motorTwo = constants.tower.TOWER_SPEED
+            motorTwo = src.constants.tower.TOWER_SPEED
 

@@ -25,9 +25,20 @@
 # eightL = 0
 # End Standard Declaration
 
-import constants.tower
-import subsystems.tower
+import src.constants.wrist
+
+servoTwo = 0
+
+def wristUp():
+    global servoTwo
+    servoTwo += src.constants.wrist.ROTATE_INCREMENT
 
 
-def autoTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, lastPosition, lastPositionSet):
-    subsystems.tower.setTowerPosition(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, motorTwo, constants.tower.TOWER_AUTO_POSITION, lastPosition, lastPositionSet)
+def wristDown():
+    global servoTwo
+    servoTwo -= src.constants.wrist.ROTATE_INCREMENT
+
+
+def setWrist(value):
+    global servoTwo
+    servoTwo = value

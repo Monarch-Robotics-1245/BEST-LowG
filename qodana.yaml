@@ -3,7 +3,7 @@ linter: jetbrains/qodana-python:2024.1
 exclude:
   - name: All
     paths:
-      - compile
+      - resources
   - name: PyPep8NamingInspection
   - name: PyInterpreterInspection
   - name: PyUnusedLocalInspection

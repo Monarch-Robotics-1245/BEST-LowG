@@ -25,7 +25,7 @@
 # eightL = 0
 # End Standard Declaration
 
-import subsystems.gripper
+import src.subsystems.gripper
 
 def gripper(grip, release, previousGrip, previousRelease):
     """
@@ -39,7 +39,7 @@ def gripper(grip, release, previousGrip, previousRelease):
     """
 
     if release == 1 and previousRelease == 0:
-        subsystems.gripper.openGripper()
+        src.subsystems.gripper.openGripper()
     elif grip == 1 and previousGrip == 0:
-        subsystems.gripper.closeGripper()
+        src.subsystems.gripper.closeGripper()
 

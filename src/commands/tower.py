@@ -28,7 +28,7 @@ This is the tower command.
 # eightL = 0
 # End Standard Declaration
 
-import subsystems.tower
+import src.subsystems.tower
 
 
 def moveTower(towerAxis, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, lastPosition, lastPositionSet):
@@ -43,4 +43,4 @@ def moveTower(towerAxis, digitalOne, digitalTwo, digitalThree, digitalFour, digi
     digitalOne (int): Takes in limit switch values
     Takes in joystick values and sets the parameters for the subsystem file's function.
     """
-    subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, towerAxis, lastPosition, lastPositionSet)
+    src.subsystems.tower.setTowerMotor(digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, towerAxis, lastPosition, lastPositionSet)

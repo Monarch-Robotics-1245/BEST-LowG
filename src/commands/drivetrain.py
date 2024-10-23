@@ -27,8 +27,8 @@
 # eightL = 0
 # End Standard Declaration
 
-import subsystems.drivetrain
-import constants.drivetrain
+import src.subsystems.drivetrain
+import src.constants.drivetrain
 
 
 def drive(driveFwd, driveSide, reverseButton, previousReverseButton, direction, speedMultiplier, speedButton, previousSpeedButton):
@@ -55,10 +55,10 @@ def drive(driveFwd, driveSide, reverseButton, previousReverseButton, direction, 
             direction = 0
 
     if previousSpeedButton == 1 and speedButton == 0:
-        if speedMultiplier == constants.drivetrain.FAST_SPEED:
-            speedMultiplier = constants.drivetrain.SLOW_SPEED
+        if speedMultiplier == src.constants.drivetrain.FAST_SPEED:
+            speedMultiplier = src.constants.drivetrain.SLOW_SPEED
         else:
-            speedMultiplier = constants.drivetrain.FAST_SPEED
+            speedMultiplier = src.constants.drivetrain.FAST_SPEED
     left = left * speedMultiplier
     right = right * speedMultiplier
     if direction == 1:
@@ -66,7 +66,7 @@ def drive(driveFwd, driveSide, reverseButton, previousReverseButton, direction, 
         right = -right
 
     # 1 is backwards, 0 is forwards
-    subsystems.drivetrain.setLeftMotor(left)
-    subsystems.drivetrain.setRightMotor(right)
+    src.subsystems.drivetrain.setLeftMotor(left)
+    src.subsystems.drivetrain.setRightMotor(right)
     
     

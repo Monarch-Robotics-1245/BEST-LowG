@@ -25,9 +25,18 @@
 # eightL = 0
 # End Standard Declaration
 
-import subsystems.gripper
-import constants.gripper
+import src.constants.drawBridge
 
 
-def autoGrip(servoOne):
-    subsystems.gripper.setGripper(servoOne, constants.gripper.AUTO_POSITION)
+def openDrawBridge():
+    servoThree = src.constants.drawBridge.DRAWBRIDGE_OPEN
+    servoFour = src.constants.drawBridge.DRAWBRIDGE_OPEN
+
+
+def closeDrawBridge():
+    servoThree = src.constants.drawBridge.DRAWBRIDGE_CLOSE
+    servoFour = src.constants.drawBridge.DRAWBRIDGE_CLOSE
+
+
+def setDrawBridge(value):
+    servoThree = value

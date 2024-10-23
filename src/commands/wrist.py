@@ -1,6 +1,3 @@
-"""
-This is the turret command
-"""
 # Standard Declaration
 # leftMotor = 0
 # rightMotor = 0
@@ -28,13 +25,11 @@ This is the turret command
 # eightL = 0
 # End Standard Declaration
 
-import subsystems.turret
+import src.subsystems.wrist
 
 
-def rotateTurret(turretAxis, analogOne):
-    """
-    analogOne (int):
-
-    Moves turret based on joystick imputs
-    """
-    subsystems.turret.setTurretMotor(analogOne, turretAxis)
+def moveWrist(wristDown, wristUp, previousWristDown, previousWristUp):
+    if wristUp == 1 and previousWristUp == 1:
+        src.subsystems.wrist.wristUp()
+    elif wristDown == 1 and previousWristDown == 1:
+        src.subsystems.wrist.wristDown()
