@@ -6,6 +6,11 @@ exclude:
       - compile
   - name: PyPep8NamingInspection
   - name: PyInterpreterInspection
-bootstrap:
-  rm -rf .idea to bootstrap
-  pip install -r requirements.txt
+  - name: PyUnusedLocalInspection
+bootstrap: rm -rf .idea to bootstrap pip install -r requirements.txt
+include:
+  - name: PyMissingOrEmptyDocstringInspection
+  - name: GrazieInspection
+  - name: SpellCheckingInspection
+  - name: LanguageDetectionInspection
+  - name: TodoComment
