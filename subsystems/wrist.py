@@ -27,15 +27,18 @@
 
 import constants.wrist
 
-
+servoTwo = 0
 
 def wristUp():
+    global servoTwo
     servoTwo += constants.wrist.ROTATE_INCREMENT
 
 
 def wristDown():
+    global servoTwo
     servoTwo -= constants.wrist.ROTATE_INCREMENT
 
 
 def setWrist(value):
+    global servoTwo
     servoTwo = value
