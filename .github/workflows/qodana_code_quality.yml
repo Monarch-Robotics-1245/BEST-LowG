@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
   pull_request:
   push:
-    branches:
-      - main
-      - 'releases/*'
+    branches: # Specify your branches here
+      - main # The 'main' branch
+      - 'releases/*' # The release branches
 
 jobs:
   qodana:
@@ -20,17 +20,14 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
-      # Install Python 3.9
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.9
-
-      # Qodana scan
-      - name: 'Qodana Scan'
+      # Run Python inside the Qodana Docker container
+      - name: Qodana Scan
         uses: JetBrains/qodana-action@v2024.1
         with:
           pr-mode: false
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_1408482145 }}
           QODANA_ENDPOINT: 'https://qodana.cloud'
+        run: |
+          apt-get update && apt-get install -y python3.9
+          python3.9 --version
