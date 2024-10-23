@@ -63,6 +63,7 @@ def auto(autoStage, digitalSix, digitalSeven, analogOne, lastPosition, lastPosit
         if digitalFour == 1:
             autoStage = 7
     elif autoStage == 7:
+        # this does a thing
         src.subsystems.drivetrain.setLeftMotor(src.constants.auto.FWD_SPEED)
         src.subsystems.drivetrain.setRightMotor(src.constants.auto.FWD_SPEED)
 
