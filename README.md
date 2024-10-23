@@ -8,7 +8,7 @@
 ![Pull Requests](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=pull-requests&cacheSeconds=10)
 [![CI Workflow](https://github.com/Monarch-Robotics-1245/BEST-LowG/actions/workflows/ci.yml/badge.svg)](https://github.com/Monarch-Robotics-1245/BEST-LowG/actions/workflows/ci.yml)
 
-![Static Badge](https://img.shields.io/badge/PyDoc_Documentation-Online?color=green&link=https%3A%2F%2Fbest-low-g-docs.vercel.app%2F)
+[![Static Badge](https://img.shields.io/badge/PyDoc_Documentation-Online?color=green&link=https%3A%2F%2Fbest-low-g-docs.vercel.app%2F)](https://best-low-g-docs.vercel.app/)
 
 # BEST LowG
 ## **Description**
