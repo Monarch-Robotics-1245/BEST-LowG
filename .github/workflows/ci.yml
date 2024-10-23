@@ -54,6 +54,61 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}  # Add workspace to PYTHONPATH
         run: |
           .venv/bin/pytest -v --tb=short resources/tests/return_tests.py
+  generate-pydoc:
+    runs-on: ubuntu-latest
+    name: Generate PyDoc Documentation
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'  # Adjust the Python version if necessary
+
+      # Step 3: Install dependencies (if any)
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+
+      # Step 4: Generate PyDoc excluding __init__.py
+      - name: Generate PyDoc for src folder
+        run: |
+          mkdir -p docs
+          find src -name "*.py" ! -name "__init__.py" | xargs -I {} .venv/bin/pydoc -w {}
+          mv *.html docs/
+
+      # Step 5: Clone external documentation repository (Private Repo)
+      - name: Clone external doc repo
+        run: |
+          git clone https://github.com/MKS2345/BEST_LowG_Docs.git external-doc-repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.DOCS_REPO_ACCESS_TOKEN }}  # Personal Access Token for private repo
+
+      # Step 6: Copy generated documentation to the external repository
+      - name: Copy generated docs to external repo
+        run: |
+          cp -r docs/* external-doc-repo/
+
+      # Step 7: Commit and push the changes to the external repository with custom message
+      - name: Commit and push documentation
+        run: |
+          cd external-doc-repo
+          git config --global user.email "monarchhsrobotics@gmail.com"
+          git config --global user.name "Monarch Robotics - GitHub Actions"
+          git add .
+          git commit -m "Generate PyDoc Documentation - ${{ github.event.head_commit.message }}"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.DOCS_REPO_ACCESS_TOKEN }}
+
+      # Step 8: Cleanup local docs folder
+      - name: Remove local docs folder
+        run: |
+          rm -rf docs/
 
   qodana:
     name: Qodana
