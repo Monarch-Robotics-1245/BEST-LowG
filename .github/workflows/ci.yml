@@ -132,7 +132,6 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_1408482145 }}
           QODANA_ENDPOINT: 'https://qodana.cloud'
-
   summary:
     name: Summary Report
     runs-on: ubuntu-latest
@@ -149,15 +148,10 @@ jobs:
           echo "${{ env.result }}" >> summary.md
           echo "" >> summary.md
 
-      - name: Upload Summary
-        uses: actions/upload-artifact@v3
-        with:
-          name: summary-report
-          path: summary.md
-
       - name: Post Summary to GitHub Actions
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.MY_GITHUB_TOKEN }}  # Use your PAT here
           script: |
             const fs = require('fs');
             const summary = fs.readFileSync('summary.md', 'utf8');
