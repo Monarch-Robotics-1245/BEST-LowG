@@ -20,24 +20,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
-      # Pull and run the Qodana Docker container manually with root privileges
-      - name: Run Qodana Docker and Install Python 3.9
-        run: |
-          docker run --privileged -d --name qodana-container jetbrains/qodana-python:2024.1
-          docker exec qodana-container apt-get update
-          docker exec qodana-container apt-get install -y python3.9
-          docker exec qodana-container python3.9 --version
-
-      # Run the Qodana scan after Python 3.9 is installed
+      # Run Python inside the Qodana Docker container
       - name: Qodana Scan
-        run: |
-          docker exec qodana-container qodana scan --cache-dir /home/runner/work/_temp/qodana/caches --results-dir /home/runner/work/_temp/qodana/results --skip-pull
+        uses: JetBrains/qodana-action@v2024.1
+        with:
+          pr-mode: false
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_1408482145 }}
           QODANA_ENDPOINT: 'https://qodana.cloud'
-
-      # Stop and clean up the Docker container
-      - name: Clean up Docker container
-        run: |
-          docker stop qodana-container
-          docker rm qodana-container

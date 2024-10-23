@@ -5,6 +5,7 @@ exclude:
     paths:
       - compile
   - name: PyPep8NamingInspection
+python-version: "3.9"
 bootstrap:
   rm -rf .idea to bootstrap
-python-version: "3.9"
+  pip install -r requirements.txt
