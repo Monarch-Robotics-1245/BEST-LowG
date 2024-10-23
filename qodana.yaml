@@ -4,6 +4,7 @@ exclude:
   - name: All
     paths:
       - resources
+      - .github/workflows/ci.yml
   - name: PyPep8NamingInspection
   - name: PyInterpreterInspection
   - name: PyUnusedLocalInspection
