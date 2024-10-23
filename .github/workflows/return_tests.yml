@@ -1,0 +1,24 @@
+name: Run Return Tests
+
+on: [push, pull_request]
+
+jobs:
+  return-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Run remaining return tests
+        run: |
+          .venv/bin/pytest -q --tb=short resources/tests/return_tests.py
