@@ -99,9 +99,15 @@ jobs:
           cp -r docs/* external-repo/docs/
           
           cd external-repo
-          git add .
-          git commit -m "Generate PyDoc Documentation - ${{ github.event.head_commit.message }}"
-          git push
+          
+          # Check if there are any changes to commit
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Generate PyDoc Documentation - ${{ github.event.head_commit.message }}"
+            git push
+          else
+            echo "No changes to documentation, skipping commit."
+          fi
 
       - name: Clean up local docs folder
         run: rm -rf docs
