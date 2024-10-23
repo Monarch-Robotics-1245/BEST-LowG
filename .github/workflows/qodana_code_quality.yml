@@ -19,7 +19,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
-
+      - name: Setup Python
+        run: |
+          apt-get update && apt-get install -y python3.9
+          python3.9 --version
       # Run Python inside the Qodana Docker container
       - name: Qodana Scan
         uses: JetBrains/qodana-action@v2024.1
@@ -28,6 +31,7 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_1408482145 }}
           QODANA_ENDPOINT: 'https://qodana.cloud'
+      - name: Check Python in Qodana Container
         run: |
-          apt-get update && apt-get install -y python3.9
-          python3.9 --version
+          docker run jetbrains/qodana-python:2024.1 python3 --version
+
