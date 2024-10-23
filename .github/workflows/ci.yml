@@ -27,23 +27,14 @@ jobs:
           .venv/bin/pip install -r requirements.txt
 
       - name: Run sanity tests
+        id: sanity
         env:
           PYTHONPATH: ${{ github.workspace }}  # Add workspace to PYTHONPATH
         run: |
-          .venv/bin/pytest -v --tb=short resources/tests/sanity_tests.py > sanity_report.txt || echo "Sanity tests failed" >> sanity_report.txt
-          cat sanity_report.txt
-
-      - name: Create Sanity Test Report
-        run: |
-          echo "# Sanity Test Results" > sanity_report.md
-          echo "Results of sanity tests:" >> sanity_report.md
-          cat sanity_report.txt >> sanity_report.md
-
-      - name: Upload Sanity Test Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: sanity-report
-          path: sanity_report.md
+          result=$(.venv/bin/pytest -v --tb=short resources/tests/sanity_tests.py)
+          echo "result<<EOF" >> $GITHUB_ENV
+          echo "$result" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
   return-tests:
     name: Return Tests
@@ -63,23 +54,14 @@ jobs:
           .venv/bin/pip install -r requirements.txt
 
       - name: Run remaining return tests
+        id: return
         env:
           PYTHONPATH: ${{ github.workspace }}  # Add workspace to PYTHONPATH
         run: |
-          .venv/bin/pytest -v --tb=short resources/tests/return_tests.py > return_report.txt || echo "Return tests failed" >> return_report.txt
-          cat return_report.txt
-
-      - name: Create Return Test Report
-        run: |
-          echo "# Return Test Results" > return_report.md
-          echo "Results of return tests:" >> return_report.md
-          cat return_report.txt >> return_report.md
-
-      - name: Upload Return Test Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: return-report
-          path: return_report.md
+          result=$(.venv/bin/pytest -v --tb=short resources/tests/return_tests.py)
+          echo "result<<EOF" >> $GITHUB_ENV
+          echo "$result" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
   generate-pydoc:
     runs-on: ubuntu-latest
@@ -101,33 +83,23 @@ jobs:
       - name: Create PyDoc documentation
         run: |
           mkdir -p docs
-          # Find all Python files except __init__.py
           find src -name "*.py" | while read filepath; do
-            # Get the directory structure within src
             relative_path=$(dirname "$filepath" | sed 's|src/||')
-            # Create corresponding directories in the docs folder
             mkdir -p "docs/$relative_path"
-            # Generate the pydoc HTML files
             .venv/bin/python -m pydoc -w "$filepath"
-            # Move the generated HTML file to the correct folder
             filename=$(basename "$filepath" .py).html
             mv "$filename" "docs/$relative_path/"
           done
 
       - name: Commit Docs
         env:
-          GITHUB_TOKEN: ${{ secrets.DOCS_REPO_ACCESS_TOKEN }}  # Use your PAT
+          GITHUB_TOKEN: ${{ secrets.DOCS_REPO_ACCESS_TOKEN }}
         run: |
           git config --global user.email "matthewspratlin@gmail.com"
           git config --global user.name "Matthew Spratlin"
           git clone https://MKS2345:${{ secrets.DOCS_REPO_ACCESS_TOKEN }}@github.com/MKS2345/BEST_LowG_Docs.git external-repo
-          
-          # Instead of deleting the whole docs directory, just copy new docs into it
           cp -r docs/* external-repo/docs/
-          
           cd external-repo
-          
-          # Check if there are any changes to commit
           if [ -n "$(git status --porcelain)" ]; then
             git add .
             git commit -m "Generate PyDoc Documentation - ${{ github.event.head_commit.message }}"
@@ -138,17 +110,6 @@ jobs:
 
       - name: Clean up local docs folder
         run: rm -rf docs
-
-      - name: Create PyDoc Report
-        run: |
-          echo "# PyDoc Generation Results" > pydoc_report.md
-          echo "Generated documentation in docs directory." >> pydoc_report.md
-
-      - name: Upload PyDoc Report
-        uses: actions/upload-artifact@v3
-        with:
-          name: pydoc-report
-          path: pydoc_report.md
 
   qodana:
     name: Qodana
@@ -171,3 +132,44 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_1408482145 }}
           QODANA_ENDPOINT: 'https://qodana.cloud'
+
+  summary:
+    name: Summary Report
+    runs-on: ubuntu-latest
+    needs: [sanity-tests, return-tests, generate-pydoc, qodana]
+    steps:
+      - name: Create Summary Report
+        id: summary
+        run: |
+          echo "### Summary Report" > summary.md
+          echo "#### Sanity Tests" >> summary.md
+          echo "${{ env.result }}" >> summary.md
+          echo "" >> summary.md
+          echo "#### Return Tests" >> summary.md
+          echo "${{ env.result }}" >> summary.md
+          echo "" >> summary.md
+
+      - name: Upload Summary
+        uses: actions/upload-artifact@v3
+        with:
+          name: summary-report
+          path: summary.md
+
+      - name: Post Summary to GitHub Actions
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const summary = fs.readFileSync('summary.md', 'utf8');
+            github.rest.checks.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'Summary Report',
+              head_sha: context.sha,
+              status: 'completed',
+              conclusion: 'success',
+              output: {
+                title: 'Test Summary',
+                summary: summary,
+              },
+            });
