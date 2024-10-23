@@ -83,7 +83,7 @@ jobs:
         run: |
           git config --global user.email "matthewspratlin@gmail.com"
           git config --global user.name "Matthew Spratlin"
-          git clone https://github.com/MKS2345/BEST_LowG_Docs.git external-repo
+          git clone https://MKS2345:${{ secrets.DOCS_REPO_ACCESS_TOKEN }}@github.com/MKS2345/BEST_LowG_Docs.git external-repo
           rm -rf external-repo/docs
           cp -r docs/ external-repo/docs
           cd external-repo
