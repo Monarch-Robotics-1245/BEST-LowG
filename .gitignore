@@ -1,4 +1,3 @@
 #GITIGNORE
 .program.py
 .idea/*
-!.idea/misc.xml
