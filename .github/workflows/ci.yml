@@ -75,7 +75,7 @@ jobs:
         run: |
           mkdir -p docs
           # Find all Python files except __init__.py
-          find src -name "*.py" ! -name "__init__.py" | while read filepath; do
+          find src -name "*.py" | while read filepath; do
             # Get the directory structure within src
             relative_path=$(dirname "$filepath" | sed 's|src/||')
             # Create corresponding directories in the docs folder
