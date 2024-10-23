@@ -5,6 +5,7 @@ exclude:
     paths:
       - compile
   - name: PyPep8NamingInspection
+  - name: PyInterpreterInspection
 bootstrap:
   rm -rf .idea to bootstrap
   pip install -r requirements.txt
