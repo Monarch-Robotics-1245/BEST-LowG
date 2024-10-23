@@ -1,5 +1,5 @@
 version: "1.0"
-linter:
+linters:
   - name: jetbrains/qodana-python:2024.1
     python_version: "3.9"
 
