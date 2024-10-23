@@ -77,7 +77,7 @@ jobs:
           find src -name "*.py" ! -name "__init__.py" | xargs .venv/bin/python -m pydoc -w
           mv *.html docs/
 
-      - name: Commit and push documentation to external repo
+      - name: Commit Docs
         env:
           GITHUB_TOKEN: ${{ secrets.DOCS_REPO_ACCESS_TOKEN }}  # Use your PAT
         run: |
