@@ -34,7 +34,7 @@ import src.constants.drivetrain
 def drive(driveFwd, driveSide, reverseButton, previousReverseButton, direction, speedMultiplier, speedButton, previousSpeedButton):
     """
     
-    Takes in the joystick values and sets the motors to the correct values.
+    Takes in the joystick values and sets the motors to the correct values. Allows reverse and forward movements.
     
     direction (int): 1 is backwards, 0 is forwards
     speedMultiplier (int): current speed multiplier for the robot
