@@ -151,7 +151,7 @@ jobs:
       - name: Post Summary to GitHub Actions
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.MY_GITHUB_TOKEN }}  # Use your PAT here
+          github-token: ${{ secrets.GITHUB_TOKEN }}  # Use GITHUB_TOKEN
           script: |
             const fs = require('fs');
             const summary = fs.readFileSync('summary.md', 'utf8');
@@ -167,3 +167,4 @@ jobs:
                 summary: summary,
               },
             });
+
