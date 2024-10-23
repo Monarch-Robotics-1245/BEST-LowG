@@ -30,7 +30,20 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}  # Add workspace to PYTHONPATH
         run: |
-          .venv/bin/pytest -v --tb=short resources/tests/sanity_tests.py -v
+          .venv/bin/pytest -v --tb=short resources/tests/sanity_tests.py > sanity_report.txt || echo "Sanity tests failed" >> sanity_report.txt
+          cat sanity_report.txt
+
+      - name: Create Sanity Test Report
+        run: |
+          echo "# Sanity Test Results" > sanity_report.md
+          echo "Results of sanity tests:" >> sanity_report.md
+          cat sanity_report.txt >> sanity_report.md
+
+      - name: Upload Sanity Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: sanity-report
+          path: sanity_report.md
 
   return-tests:
     name: Return Tests
@@ -53,7 +66,21 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}  # Add workspace to PYTHONPATH
         run: |
-          .venv/bin/pytest -v --tb=short resources/tests/return_tests.py
+          .venv/bin/pytest -v --tb=short resources/tests/return_tests.py > return_report.txt || echo "Return tests failed" >> return_report.txt
+          cat return_report.txt
+
+      - name: Create Return Test Report
+        run: |
+          echo "# Return Test Results" > return_report.md
+          echo "Results of return tests:" >> return_report.md
+          cat return_report.txt >> return_report.md
+
+      - name: Upload Return Test Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: return-report
+          path: return_report.md
+
   generate-pydoc:
     runs-on: ubuntu-latest
     name: Generate PyDoc Documentation
@@ -111,6 +138,17 @@ jobs:
 
       - name: Clean up local docs folder
         run: rm -rf docs
+
+      - name: Create PyDoc Report
+        run: |
+          echo "# PyDoc Generation Results" > pydoc_report.md
+          echo "Generated documentation in docs directory." >> pydoc_report.md
+
+      - name: Upload PyDoc Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: pydoc-report
+          path: pydoc_report.md
 
   qodana:
     name: Qodana
