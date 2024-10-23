@@ -5,5 +5,3 @@ exclude:
     paths:
       - compile
   - name: PyPep8NamingInspection
-python:
-  version: "3.9"
