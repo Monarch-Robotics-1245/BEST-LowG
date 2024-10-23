@@ -83,7 +83,7 @@ jobs:
         run: |
           git config --global user.email "monarchhsrobotics@gmail.com"
           git config --global user.name "Monarch Robotics - GitHub Actions"
-          git clone https://github.com/YOUR_USERNAME/EXTERNAL_REPO.git external-repo
+          git clone https://github.com/MKS2345/BEST_LowG_Docs.git external-repo
           rm -rf external-repo/docs
           cp -r docs/ external-repo/docs
           cd external-repo
