@@ -3,9 +3,9 @@ on:
   workflow_dispatch:
   pull_request:
   push:
-    branches: # Specify your branches here
-      - main # The 'main' branch
-      - 'releases/*' # The release branches
+    branches:
+      - main
+      - 'releases/*'
 
 jobs:
   qodana:
@@ -20,16 +20,13 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
-      # Install Python
+      # Install Python 3.9
       - name: Set up Python 3.9
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
 
-      # Set Python path environment variable
-      - name: Set Python Path
-        run: echo "PYTHON_PATH=$(which python)" >> $GITHUB_ENV
-
+      # Qodana scan
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2024.1
         with:
@@ -37,4 +34,3 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_1408482145 }}
           QODANA_ENDPOINT: 'https://qodana.cloud'
-          PYTHON_PATH: ${{ env.PYTHON_PATH }}  # Pass the Python path to Qodana
