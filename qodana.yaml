@@ -4,3 +4,4 @@ exclude:
   - name: All
     paths:
       - compile
+  - name: PyPep8NamingInspection
