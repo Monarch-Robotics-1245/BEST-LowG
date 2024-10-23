@@ -26,6 +26,10 @@ jobs:
         with:
           python-version: 3.9
 
+      # Set Python path environment variable
+      - name: Set Python Path
+        run: echo "PYTHON_PATH=$(which python)" >> $GITHUB_ENV
+
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@v2024.1
         with:
@@ -33,3 +37,4 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_1408482145 }}
           QODANA_ENDPOINT: 'https://qodana.cloud'
+          PYTHON_PATH: ${{ env.PYTHON_PATH }}  # Pass the Python path to Qodana
