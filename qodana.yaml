@@ -33,7 +33,7 @@ exclude:
   - name: PyRedundantParenthesesInspection
   - name: Exclude programFINAL.py
     paths:
-      - '**/programFINAL.py'
+      - 'compile/**'
 
 include:
   - name: Include only project directories
