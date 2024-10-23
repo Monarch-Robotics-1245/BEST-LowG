@@ -32,7 +32,8 @@ exclude:
   - name: PyUnusedLocalInspection
   - name: PyRedundantParenthesesInspection
   - name: Exclude programFINAL.py
-  - '**/programFINAL.py'
+    paths:
+      - '**/programFINAL.py'
 
 include:
   - name: Include only project directories
