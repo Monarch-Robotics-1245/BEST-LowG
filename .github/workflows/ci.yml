@@ -137,32 +137,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: [sanity-tests, return-tests, generate-pydoc]  # Exclude Qodana
     steps:
-      - name: Collect Sanity Tests Output
+      - name: Sanity Tests Summary
         id: sanity
         run: echo "Sanity Tests Passed!"  # You can replace this with actual test output
         continue-on-error: true
         shell: bash
-      - name: Collect Return Tests Output
+      - name: Return Tests Summary
         id: return_tests
         run: echo "Return Tests Passed!"  # You can replace this with actual test output
         continue-on-error: true
         shell: bash
-      - name: Collect PyDoc Generation Output
+      - name: PyDoc Generation Summary
         id: pydoc
         run: echo "PyDoc Generation Succeeded!"  # Replace with actual PyDoc generation status
         continue-on-error: true
-        shell: bash
-
-      # Combine all summaries into one terminal output
-      - name: Display Combined Summary
-        run: |
-          echo "### Summary Report"
-          echo "#### Sanity Tests"
-          echo "${{ steps.sanity.outputs.result }}"
-          echo ""
-          echo "#### Return Tests"
-          echo "${{ steps.return_tests.outputs.result }}"
-          echo ""
-          echo "#### PyDoc Generation"
-          echo "${{ steps.pydoc.outputs.result }}"
         shell: bash
