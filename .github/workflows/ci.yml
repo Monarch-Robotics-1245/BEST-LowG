@@ -74,8 +74,18 @@ jobs:
       - name: Create PyDoc documentation
         run: |
           mkdir -p docs
-          find src -name "*.py" ! -name "__init__.py" | xargs .venv/bin/python -m pydoc -w
-          mv *.html docs/
+          # Find all Python files except __init__.py
+          find src -name "*.py" ! -name "__init__.py" | while read filepath; do
+            # Get the directory structure within src
+            relative_path=$(dirname "$filepath" | sed 's|src/||')
+            # Create corresponding directories in the docs folder
+            mkdir -p "docs/$relative_path"
+            # Generate the pydoc HTML files
+            .venv/bin/python -m pydoc -w "$filepath"
+            # Move the generated HTML file to the correct folder
+            filename=$(basename "$filepath" .py).html
+            mv "$filename" "docs/$relative_path/"
+          done
 
       - name: Commit Docs
         env:
