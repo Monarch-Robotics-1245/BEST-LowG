@@ -7,3 +7,4 @@ exclude:
   - name: PyPep8NamingInspection
 bootstrap:
   rm -rf .idea to bootstrap
+python-version: "3.9"
