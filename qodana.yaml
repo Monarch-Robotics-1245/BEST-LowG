@@ -8,6 +8,7 @@ exclude:
   - name: PyPep8NamingInspection
   - name: PyInterpreterInspection
   - name: PyUnusedLocalInspection
+  - name: PyPep8Inspection
 bootstrap: rm -rf .idea to bootstrap pip install -r requirements.txt
 include:
   - name: PyMissingOrEmptyDocstringInspection
