@@ -29,6 +29,9 @@ import src.constants.gripper
 
 
 def openGripper():
+    """
+    sets gripper to be open
+    """
     servoOne = src.constants.gripper.GRIPPER_OPEN
 
 
