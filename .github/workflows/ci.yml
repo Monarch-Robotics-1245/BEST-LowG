@@ -93,7 +93,7 @@ jobs:
   generate-pydoc:
     runs-on: ubuntu-latest
     name: Generate PyDoc Documentation
-    if: github.event_name != 'pull_request'  # Exclude from pull requests
+    if: github.event_name != 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository  # Exclude from PRs and forks
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
