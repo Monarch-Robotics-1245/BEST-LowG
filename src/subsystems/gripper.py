@@ -36,6 +36,9 @@ def openGripper():
 
 
 def closeGripper():
+    """
+    sets gripper to be closed
+    """
     servoOne = src.constants.gripper.GRIPPER_CLOSE
 
 
