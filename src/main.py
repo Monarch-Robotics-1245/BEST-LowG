@@ -13,6 +13,8 @@ import src.autos
 
 def robot(leftMotor, rightMotor, motorOne, motorTwo, servoOne, servoTwo, servoThree, servoFour, digitalOne, digitalTwo, digitalThree, digitalFour, digitalFive, digitalSix, digitalSeven, digitalEight, digitalNine, driveFwd, driveSide, dbgUp, dbgDown, previousDbgDown, previousDbgUp, grip, release, previousGrip, previousRelease, towerAxis, lastPosition, lastPositionSet, turretAxis, analogOne, wristDown, wristUp, previousWristDown, previousWristUp, turretUp, previousTurretUp, previousTurretDown, turretDown, modeToggle, previousModeToggle, state, targetPosition, autoAButton, previousAutoAButton, autoBButton, previousAutoBButton, autoID, reverseButton, previousReverseButton, speedButton, previousSpeedButton, speedMultiplier, direction, autoStage):
     # 0 (not pressed) and 1(pressed) - not True and False for buttons
+
+    #if ok
     if digitalEight == 1:
         allowedStates = 1
     else:

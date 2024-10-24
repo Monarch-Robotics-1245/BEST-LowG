@@ -1,3 +1,4 @@
 #GITIGNORE
 .program.py
 .idea/*
+.vscode/settings.json

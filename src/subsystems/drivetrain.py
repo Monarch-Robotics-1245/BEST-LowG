@@ -29,8 +29,16 @@
 
 
 def setLeftMotor(value):
+    """
+    set left motor to the value provided
+    value (int): the value that the left motor is set to
+    """
     leftMotor = value
 
 
 def setRightMotor(value):
+    """
+    set right motor to the value provided
+    value (int): the value that the right motor is set to
+    """
     rightMotor = value
