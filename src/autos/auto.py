@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+import src.subsystems.tower
+import src.subsystems.gripper
+import src.subsystems.drivetrain
+import src.subsystems.drawBridge
+import src.constants.auto
+
 
 # Standard Declaration
 # leftMotor = 0
