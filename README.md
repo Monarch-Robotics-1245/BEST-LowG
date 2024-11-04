@@ -1,11 +1,6 @@
 ![Stars](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=stars&cacheSeconds=10)
 ![Forks](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=forks&cacheSeconds=10)
 ![Watchers](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=watchers&cacheSeconds=10)
-![Commits](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=commits&cacheSeconds=10)
-![Last Release](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=last-release&cacheSeconds=10)
-![Last Release Date](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=last-release-date&cacheSeconds=10)
-![Last Commit Date](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=last-commit&cacheSeconds=10)
-![Pull Requests](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=pull-requests&cacheSeconds=10)
 [![CI Workflow](https://github.com/Monarch-Robotics-1245/BEST-LowG/actions/workflows/ci.yml/badge.svg)](https://github.com/Monarch-Robotics-1245/BEST-LowG/actions/workflows/ci.yml)
 
 [![Static Badge](https://img.shields.io/badge/PyDoc_Documentation-Online?color=green&link=https%3A%2F%2Fbest-low-g-docs.vercel.app%2F)](https://best-low-g-docs.vercel.app/)
@@ -147,3 +142,11 @@ This may be changed over the season:
 # eightL = 0
 # End Standard Declaration
 ```
+
+
+Not working badges:
+![Commits](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=commits&cacheSeconds=10)
+![Last Release](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=last-release&cacheSeconds=10)
+![Last Release Date](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=last-release-date&cacheSeconds=10)
+![Last Commit Date](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=last-commit&cacheSeconds=10)
+![Pull Requests](https://img.shields.io/endpoint?url=https://monarchlowg-private-repo-badges-23423423.vercel.app/api/fetchRepoData?type=pull-requests&cacheSeconds=10)
